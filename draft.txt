@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Analytics Engine | IncludAI DataHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .stepper-item {
+            position: relative;
+        }
+        .stepper-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            height: 100%;
+            border-left: 2px dashed #d1d5db;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .chart-container {
+            height: 300px;
+        }
+        .heatmap {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4px;
+        }
+        .heatmap-cell {
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: white;
+            border-radius: 4px;
+        }
+        .tooltip {
+            position: relative;
+        }
+        .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #374151;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        @media (max-width: 768px) {
+            .stepper-item:not(:last-child):after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Dashboard Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl mr-2">ID</div>
+                    <span class="text-xl font-bold text-gray-800">IncludAI DataHub</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100" aria-label="Notifications">
+                        <i class="fas fa-bell text-gray-600"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mr-2">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="text-sm font-medium">Admin</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="mt-4 flex space-x-6 border-b">
+                <a href="dashboard.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Dashboard</a>
+                <a href="data-collection.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Data Collection</a>
+                <a href="analytics.html" class="pb-3 px-1 text-teal-600 border-b-2 border-teal-600 font-medium">Analytics</a>
+                <a href="#" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Breadcrumbs -->
+        <div class="flex items-center text-sm text-gray-600 mb-6">
+            <a href="dashboard.html" class="hover:text-teal-600">Dashboard</a>
+            <span class="mx-2">/</span>
+            <a href="#" class="hover:text-teal-600">Analytics</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-800 font-medium">AI Analytics Engine</span>
+        </div>
+
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">AI Analytics Engine</h1>
+                <p class="text-gray-600">Transform raw data into actionable insights for disability inclusion</p>
+            </div>
+            <div class="flex space-x-3 mt-4 md:mt-0">
+                <button class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg flex items-center">
+                    <i class="fas fa-play mr-2"></i> Run New Analysis
+                </button>
+                <button class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg flex items-center">
+                    <i class="fas fa-upload mr-2"></i> Upload Dataset
+                </button>
+            </div>
+        </div>
+
+        <!-- Notification Banner -->
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-exclamation-circle text-yellow-400"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-yellow-700">
+                        <span class="font-medium">Data Alert:</span> Unusual patterns detected in mobility impairment responses from District X. 
+                        <a href="#" class="font-medium underline text-yellow-700 hover:text-yellow-600">Review now</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pipeline Status -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-lg font-semibold text-gray-800">Automated Data Pipeline</h2>
+                <div class="text-sm text-gray-500">
+                    <i class="far fa-clock mr-1"></i> Last Analysis Run: <span class="font-medium">Today, 10:42 AM</span>
+                </div>
+            </div>
+
+            <!-- Pipeline Stepper -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="stepper-item">
+                    <div class="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-check text-teal-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-center font-medium text-gray-800 mb-1">Data Ingestion</h3>
+                    <p class="text-center text-sm text-gray-600">1,245 records loaded</p>
+                    <button class="text-xs text-teal-600 hover:text-teal-700 block mx-auto mt-2 flex items-center">
+                        View Logs <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="stepper-item">
+                    <div class="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-check text-teal-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-center font-medium text-gray-800 mb-1">Cleaning & Normalization</h3>
+                    <p class="text-center text-sm text-gray-600">120 duplicates removed</p>
+                    <button class="text-xs text-teal-600 hover:text-teal-700 block mx-auto mt-2 flex items-center">
+                        View Logs <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="stepper-item">
+                    <div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-exclamation text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-center font-medium text-gray-800 mb-1">Bias Check</h3>
+                    <p class="text-center text-sm text-gray-600">2 potential biases found</p>
+                    <button class="text-xs text-teal-600 hover:text-teal-700 block mx-auto mt-2 flex items-center">
+                        View Logs <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="stepper-item">
+                    <div class="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-check text-teal-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-center font-medium text-gray-800 mb-1">AI Inference</h3>
+                    <p class="text-center text-sm text-gray-600">14 insights generated</p>
+                    <button class="text-xs text-teal-600 hover:text-teal-700 block mx-auto mt-2 flex items-center">
+                        View Logs <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Models & Insights -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-lg font-semibold text-gray-800 mb-6">AI Models & Insights</h2>
+            
+            <!-- Tabs -->
+            <div class="border-b border-gray-200 mb-6">
+                <nav class="-mb-px flex space-x-8">
+                    <button class="border-b-2 border-teal-500 text-teal-600 px-4 py-3 text-sm font-medium">Service Gap Mapping</button>
+                    <button class="border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 px-4 py-3 text-sm font-medium">Resource Forecasting</button>
+                    <button class="border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 px-4 py-3 text-sm font-medium">Bias Detection</button>
+                </nav>
+            </div>
+
+            <!-- Tab Content -->
+            <div>
+                <!-- Heatmap Visualization -->
+                <div class="mb-8">
+                    <h3 class="text-md font-medium text-gray-800 mb-4">Service Gaps by Disability Type and Region</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="heatmap mb-4">
+                            <!-- Header Row -->
+                            <div class="font-medium text-gray-700 text-center">Region</div>
+                            <div class="font-medium text-gray-700 text-center">Visual</div>
+                            <div class="font-medium text-gray-700 text-center">Hearing</div>
+                            <div class="font-medium text-gray-700 text-center">Mobility</div>
+                            <div class="font-medium text-gray-700 text-center">Cognitive</div>
+                            
+                            <!-- Data Rows -->
+                            <div class="font-medium text-gray-700 text-center">District A</div>
+                            <div class="heatmap-cell bg-green-500">Low</div>
+                            <div class="heatmap-cell bg-yellow-500">Medium</div>
+                            <div class="heatmap-cell bg-red-500">High</div>
+                            <div class="heatmap-cell bg-green-500">Low</div>
+                            
+                            <div class="font-medium text-gray-700 text-center">District B</div>
+                            <div class="heatmap-cell bg-yellow-500">Medium</div>
+                            <div class="heatmap-cell bg-red-500">High</div>
+                            <div class="heatmap-cell bg-yellow-500">Medium</div>
+                            <div class="heatmap-cell bg-green-500">Low</div>
+                            
+                            <div class="font-medium text-gray-700 text-center">District C</div>
+                            <div class="heatmap-cell bg-red-500">High</div>
+                            <div class="heatmap-cell bg-green-500">Low</div>
+                            <div class="heatmap-cell bg-green-500">Low</div>
+                            <div class="heatmap-cell bg-yellow-500">Medium</div>
+                        </div>
+                        <div class="flex justify-center space-x-4">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-green-500 mr-1"></div>
+                                <span class="text-xs">Low gap</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-yellow-500 mr-1"></div>
+                                <span class="text-xs">Medium gap</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-red-500 mr-1"></div>
+                                <span class="text-xs">High gap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="space-y-4">
+                    <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-lightbulb text-blue-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700">
+                                    <span class="font-medium">AI Insight:</span> Persons with mobility impairments in District A show the highest service gap (87% unmet needs) primarily in transportation services.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-400">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-lightbulb text-purple-500"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-purple-700">
+                                    <span class="font-medium">AI Insight:</span> Visual impairment services in District C are under-resourced relative to population size (42% coverage vs. 68% regional average).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Natural Language Summary -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-lg font-semibold text-gray-800">Executive Summary</h2>
+                <div class="flex space-x-3">
+                    <button class="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded flex items-center">
+                        <i class="fas fa-sync-alt mr-1"></i> Regenerate
+                    </button>
+                    <div class="relative">
+                        <button class="text-sm bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded flex items-center">
+                            <i class="fas fa-language mr-1"></i> Language
+                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                <p class="text-gray-700 mb-3">
+                    In District X, persons with visual impairments are underrepresented in collected data (only 32% coverage compared to regional average of 58%). AI forecasts a 40% increase in demand for inclusive learning tools in the next year based on population trends and current service gaps.
+                </p>
+                <p class="text-gray-700 mb-3">
+                    Bias checks reveal overrepresentation of urban males (62% of responses) compared to rural populations and females. The model recommends targeted outreach to these underrepresented groups in the next survey cycle.
+                </p>
+                <p class="text-gray-700">
+                    Service gap analysis identifies mobility assistance as the most critical need across all districts, with District A showing the most severe shortages (87% unmet needs).
+                </p>
+            </div>
+
+            <div class="flex justify-between">
+                <div class="flex items-center">
+                    <div class="flex items-center mr-4">
+                        <span class="text-sm text-gray-600 mr-2">Detail Level:</span>
+                        <div class="flex bg-gray-100 rounded-lg p-1">
+                            <button class="px-2 py-1 text-xs rounded bg-white shadow-sm">Basic</button>
+                            <button class="px-2 py-1 text-xs rounded">Detailed</button>
+                            <button class="px-2 py-1 text-xs rounded">Technical</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex space-x-2">
+                    <button class="text-sm bg-teal-600 hover:bg-teal-700 text-white px-3 py-1 rounded flex items-center">
+                        <i class="fas fa-file-word mr-1"></i> DOCX
+                    </button>
+                    <button class="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded flex items-center">
+                        <i class="fas fa-file-pdf mr-1"></i> PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback & Trust Panel -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">About Our Models</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <p class="text-gray-600 mb-4">
+                        Our AI models use <span class="font-medium">XGBoost and LSTM neural networks</span> trained on regional disability data from 12 sources. Models are regularly audited for fairness and accuracy.
+                    </p>
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-shield-alt text-teal-500"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-gray-600">
+                                <span class="font-medium">Ethics Check:</span> All insights pass our bias detection framework with 95% confidence.
+                            </p>
+                        </div>
+                    </div>
+                    <button class="text-sm bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-3 py-1 rounded flex items-center">
+                        <i class="fas fa-bug mr-1"></i> Report an Issue
+                    </button>
+                </div>
+                <div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-sm font-medium text-gray-700 mb-2">Was this analysis helpful?</p>
+                        <div class="flex space-x-1 mb-3">
+                            <button class="text-gray-400 hover:text-yellow-400 focus:text-yellow-400">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-yellow-400 focus:text-yellow-400">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-yellow-400 focus:text-yellow-400">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-yellow-400 focus:text-yellow-400">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-yellow-400 focus:text-yellow-400">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                        <textarea class="w-full text-sm border border-gray-300 rounded-lg p-2" rows="2" placeholder="Optional feedback..."></textarea>
+                        <button class="text-sm bg-teal-600 hover:bg-teal-700 text-white px-3 py-1 rounded mt-2">
+                            Submit Feedback
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-gray-600">© 2023 IncludAI DataHub. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Accessibility</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for rating stars
+        document.querySelectorAll('.fa-star').forEach((star, index, stars) => {
+            star.addEventListener('click', () => {
+                // Reset all stars
+                stars.forEach(s => s.classList.remove('text-yellow-400'));
+                stars.forEach(s => s.classList.add('text-gray-400'));
+                
+                // Color stars up to clicked one
+                for(let i = 0; i <= index; i++) {
+                    stars[i].classList.remove('text-gray-400');
+                    stars[i].classList.add('text-yellow-400');
+                }
+            });
+        });
+
+        // Tab switching functionality
+        const tabs = document.querySelectorAll('nav.-mb-px button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('border-teal-500', 'text-teal-600');
+                    t.classList.add('border-transparent', 'text-gray-500');
+                });
+                tab.classList.remove('border-transparent', 'text-gray-500');
+                tab.classList.add('border-teal-500', 'text-teal-600');
+            });
+        });
+    </script>
+</body>
+</html>
