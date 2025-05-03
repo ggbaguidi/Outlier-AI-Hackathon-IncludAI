@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centralized Dashboard | IncludAI DataHub</title>
+    <meta name="description" content="Monitor data collection progress and AI insights in real-time with IncludAI DataHub's centralized dashboard.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Alegreya:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/png;base64,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" type="image/png">
+    <style>
+        body {
+            font-family: 'Alegreya', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .dashboard-card {
+            transition: all 0.3s ease;
+        }
+        .dashboard-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .map-tooltip {
+            position: absolute;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 4px;
+            pointer-events: none;
+            font-size: 12px;
+            z-index: 10;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .mobile-stack {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Dashboard Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl mr-2">ID</div>
+                    <span class="text-xl font-bold text-gray-800">IncludAI DataHub</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100">
+                        <i class="fas fa-bell text-gray-600"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mr-2">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="text-sm font-medium">Admin</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-full hover:bg-gray-100" aria-label="Mobile Menu">
+                    <i class="fas fa-bars text-gray-600 text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex mt-4 flex space-x-6 border-b">
+                <a href="#" class="pb-3 px-1 text-teal-600 border-b-2 border-teal-600 font-medium">Dashboard</a>
+                <a href="/home/data-collection.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Data Collection</a>
+                <a href="/home/analytics.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Analytics</a>
+                <a href="/home/co-design.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Co-Design & Feedback Portal</a>
+                <a href="/home/reporting.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Reporting & DaaS</a>
+                <a href="/home/resources.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Resources</a>
+                <a href="/home/user-managements.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Settings</a>
+            </nav>
+            
+            <!-- Filters -->
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center space-x-4">
+                    <div>
+                        <label for="date-range" class="block text-sm font-medium text-gray-700 mb-1">Date Range</label>
+                        <select id="date-range" class="rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 text-sm">
+                            <option>Last 7 days</option>
+                            <option selected>Last 30 days</option>
+                            <option>Last 90 days</option>
+                            <option>Custom range</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="region" class="block text-sm font-medium text-gray-700 mb-1">Region</label>
+                        <select id="region" class="rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 text-sm">
+                            <option selected>All regions</option>
+                            <option>Africa</option>
+                            <option>Asia</option>
+                            <option>Europe</option>
+                            <option>North America</option>
+                            <option>South America</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                        <i class="fas fa-download mr-2"></i> Export
+                    </button>
+                    <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                        <i class="fas fa-plus mr-2"></i> New Survey
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- KPI Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+            <!-- Total Surveys -->
+            <div class="bg-white rounded-lg shadow-sm p-6 dashboard-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Total Surveys</p>
+                        <p class="text-3xl font-bold mt-1">2,345</p>
+                        <p class="text-sm text-gray-500 mt-1"><span class="text-green-500">↑ 12%</span> from last period</p>
+                    </div>
+                    <div class="relative w-16 h-16">
+                        <svg class="w-full h-full" viewBox="0 0 36 36">
+                            <path
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                fill="none"
+                                stroke="#e6e6e6"
+                                stroke-width="3"
+                            />
+                            <path
+                                class="progress-ring__circle"
+                                stroke-dasharray="100, 100"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                fill="none"
+                                stroke="#00b39f"
+                                stroke-width="3"
+                            />
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold">100%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Completion Rate -->
+            <div class="bg-white rounded-lg shadow-sm p-6 dashboard-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Completion Rate</p>
+                        <p class="text-3xl font-bold mt-1">87%</p>
+                        <p class="text-sm text-gray-500 mt-1"><span class="text-green-500">↑ 5%</span> from last period</p>
+                    </div>
+                    <div class="relative w-16 h-16">
+                        <svg class="w-full h-full" viewBox="0 0 36 36">
+                            <path
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                fill="none"
+                                stroke="#e6e6e6"
+                                stroke-width="3"
+                            />
+                            <path
+                                class="progress-ring__circle"
+                                stroke-dasharray="87, 100"
+                                d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                fill="none"
+                                stroke="#8a2be2"
+                                stroke-width="3"
+                            />
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-xs font-bold">87%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bias Alerts -->
+            <div class="bg-white rounded-lg shadow-sm p-6 dashboard-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Bias Alerts</p>
+                        <p class="text-3xl font-bold mt-1">5</p>
+                        <p class="text-sm text-gray-500 mt-1"><span class="text-red-500">↑ 2</span> from last period</p>
+                    </div>
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-red-50">
+                        <i class="fas fa-exclamation-triangle text-red-500 text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Active Collectors -->
+            <div class="bg-white rounded-lg shadow-sm p-6 dashboard-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Active Collectors</p>
+                        <p class="text-3xl font-bold mt-1">42</p>
+                        <p class="text-sm text-gray-500 mt-1"><span class="text-green-500">↑ 8</span> from last period</p>
+                    </div>
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-green-50">
+                        <i class="fas fa-users text-green-500 text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Map and Demographics -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+            <!-- Map -->
+            <div class="bg-white rounded-lg shadow-sm p-6 lg:col-span-2 dashboard-card">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold">Geographic Coverage</h3>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 text-xs bg-gray-100 rounded">Responses</button>
+                        <button class="px-3 py-1 text-xs bg-gray-100 rounded">Completion</button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Placeholder for map visualization -->
+                    <div class="w-full h-80 bg-gray-100 rounded-lg flex items-center justify-center">
+                        <p class="text-gray-500">Interactive map visualization would appear here</p>
+                    </div>
+                    <div class="map-tooltip" id="map-tooltip"></div>
+                </div>
+                <div class="mt-4 flex justify-between text-sm text-gray-500">
+                    <span>Hover over regions for details</span>
+                    <span>Color intensity = response density</span>
+                </div>
+            </div>
+            
+            <!-- Demographics -->
+            <div class="bg-white rounded-lg shadow-sm p-6 dashboard-card">
+                <h3 class="text-lg font-bold mb-4">Demographic Breakdown</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Age Groups -->
+                    <div>
+                        <h4 class="text-sm font-medium mb-2">Age Groups</h4>
+                        <div class="w-full h-40 bg-gray-100 rounded flex items-center justify-center">
+                            <p class="text-gray-500">Age distribution chart</p>
+                        </div>
+                        <div class="mt-2 text-xs text-gray-500">
+                            <div class="flex items-center"><div class="w-3 h-3 bg-teal-400 mr-1"></div> 18-35: 42%</div>
+                            <div class="flex items-center"><div class="w-3 h-3 bg-purple-400 mr-1"></div> 36-55: 35%</div>
+                            <div class="flex items-center"><div class="w-3 h-3 bg-gray-400 mr-1"></div> 56+: 23%</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Disability Types -->
+                    <div>
+                        <h4 class="text-sm font-medium mb-2">Disability Types</h4>
+                        <div class="w-full h-40 bg-gray-100 rounded flex items-center justify-center">
+                            <p class="text-gray-500">Disability distribution chart</p>
+                        </div>
+                        <div class="mt-2 text-xs text-gray-500">
+                            <div class="flex items-center"><div class="w-3 h-3 bg-teal-400 mr-1"></div> Physical: 31%</div>
+                            <div class="flex items-center"><div class="w-3 h-3 bg-purple-400 mr-1"></div> Sensory: 28%</div>
+                            <div class="flex items-center"><div class="w-3 h-3 bg-gray-400 mr-1"></div> Cognitive: 41%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Timeline and Alerts -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+            <!-- Timeline -->
+            <div class="bg-white rounded-lg shadow-sm p-6 lg:col-span-2 dashboard-card">
+                <h3 class="text-lg font-bold mb-4">Data Collection Timeline</h3>
+                <div class="w-full h-64 bg-gray-100 rounded flex items-center justify-center">
+                    <p class="text-gray-500">Line chart showing survey submissions over time</p>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <div class="flex items-center text-xs">
+                        <div class="w-3 h-3 bg-teal-500 rounded-full mr-1"></div>
+                        <span>Surveys submitted</span>
+                    </div>
+                    <div class="flex items-center text-xs">
+                        <div class="w-3 h-3 bg-purple-500 rounded-full mr-1"></div>
+                        <span>Completed surveys</span>
+                    </div>
+                    <div class="flex items-center text-xs">
+                        <div class="w-3 h-3 bg-gray-500 rounded-full mr-1"></div>
+                        <span>System events</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI Alerts -->
+            <div class="bg-white rounded-lg shadow-sm p-6 dashboard-card">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold">AI Insights & Alerts</h3>
+                    <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">5 New</span>
+                </div>
+                <div class="space-y-4">
+                    <!-- Alert 1 -->
+                    <div class="p-3 border-l-4 border-red-500 bg-red-50 rounded-r">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-sm font-medium">Potential sampling bias</p>
+                                <p class="text-xs text-gray-600 mt-1">Under-sampling of rural respondents in Region A</p>
+                            </div>
+                            <span class="text-xs bg-white text-red-500 px-2 py-1 rounded-full">High</span>
+                        </div>
+                        <div class="mt-2 flex justify-between items-center text-xs">
+                            <span class="text-gray-500">2 hours ago</span>
+                            <a href="#" class="text-teal-600 hover:underline">View details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Alert 2 -->
+                    <div class="p-3 border-l-4 border-yellow-500 bg-yellow-50 rounded-r">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-sm font-medium">Question phrasing issue</p>
+                                <p class="text-xs text-gray-600 mt-1">Question 12 may be confusing for cognitive disabilities</p>
+                            </div>
+                            <span class="text-xs bg-white text-yellow-500 px-2 py-1 rounded-full">Medium</span>
+                        </div>
+                        <div class="mt-2 flex justify-between items-center text-xs">
+                            <span class="text-gray-500">1 day ago</span>
+                            <a href="#" class="text-teal-600 hover:underline">View details</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Alert 3 -->
+                    <div class="p-3 border-l-4 border-blue-500 bg-blue-50 rounded-r">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-sm font-medium">Positive trend detected</p>
+                                <p class="text-xs text-gray-600 mt-1">Participation among women increased by 15%</p>
+                            </div>
+                            <span class="text-xs bg-white text-blue-500 px-2 py-1 rounded-full">Info</span>
+                        </div>
+                        <div class="mt-2 flex justify-between items-center text-xs">
+                            <span class="text-gray-500">2 days ago</span>
+                            <a href="#" class="text-teal-600 hover:underline">View details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <a href="#" class="text-sm text-teal-600 hover:underline">View all alerts</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Call to Action -->
+        <div class="bg-gradient-to-r from-teal-600 to-purple-600 rounded-lg shadow-sm p-6 text-white">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">Ready to take action on these insights?</h3>
+                    <p class="text-teal-100">Investigate data gaps or expand your data collection team.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button class="px-6 py-2 bg-white text-teal-600 font-medium rounded hover:bg-gray-100 transition">
+                        Investigate Data Gaps
+                    </button>
+                    <button class="px-6 py-2 border-2 border-white text-white font-medium rounded hover:bg-white hover:bg-opacity-10 transition">
+                        Invite New Collector
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-gray-600">© 2023 IncludAI DataHub. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Accessibility</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for map tooltip (would be expanded in production)
+        document.addEventListener('DOMContentLoaded', function() {
+            // This would be replaced with actual map interaction logic
+            const mapArea = document.querySelector('.bg-gray-100.rounded-lg');
+            const tooltip = document.getElementById('map-tooltip');
+            
+            mapArea.addEventListener('mousemove', function(e) {
+                if (Math.random() > 0.7) { // Simulate hover over a region
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = (e.pageX + 10) + 'px';
+                    tooltip.style.top = (e.pageY + 10) + 'px';
+                    tooltip.innerHTML = 'East Africa<br>1,245 submissions<br>89% completion';
+                } else {
+                    tooltip.style.display = 'none';
+                }
+            });
+            
+            mapArea.addEventListener('mouseout', function() {
+                tooltip.style.display = 'none';
+            });
+            
+            // Mobile menu toggle would go here
+        });
+    </script>
+</body>
+</html>

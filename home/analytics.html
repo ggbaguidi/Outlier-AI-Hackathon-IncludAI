@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Analytics Engine | IncludAI DataHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Alegreya:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/png;base64,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" type="image/png">
+    <style>
+        body {
+            font-family: 'Alegreya', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Custom styles for colorblind-safe charts */
+        .chart-1 { fill: #4f46e5; }
+        .chart-2 { fill: #10b981; }
+        .chart-3 { fill: #f59e0b; }
+        .chart-4 { fill: #ef4444; }
+        
+        /* Custom tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #1f2937;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 14px;
+            font-weight: normal;
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Custom stepper */
+        .stepper {
+            counter-reset: step;
+        }
+        .stepper-step {
+            position: relative;
+            min-height: 4rem;
+        }
+        .stepper-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            top: 3rem;
+            height: calc(100% - 3rem);
+            border-left: 2px dashed #d1d5db;
+        }
+        .stepper-step.completed:after {
+            border-left: 2px solid #10b981;
+        }
+        .stepper-step:before {
+            content: counter(step);
+            counter-increment: step;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: bold;
+            color: #6b7280;
+        }
+        .stepper-step.completed:before {
+            background: #10b981;
+            color: white;
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+        .stepper-step.warning:before {
+            background: #f59e0b;
+            color: white;
+            content: '\f06a';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+        .stepper-step.error:before {
+            background: #ef4444;
+            color: white;
+            content: '\f06a';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+        
+        /* Custom tabs */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Custom map */
+        .map-container {
+            position: relative;
+            height: 400px;
+            background: #f3f4f6;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .map-region {
+            position: absolute;
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .map-region:hover {
+            background: rgba(16, 185, 129, 0.4);
+            transform: scale(1.05);
+        }
+        .map-region.highlight {
+            background: rgba(239, 68, 68, 0.4);
+            border: 1px solid rgba(239, 68, 68, 0.8);
+        }
+        
+        /* Custom chart */
+        .chart-bar {
+            height: 100%;
+            background: #4f46e5;
+            border-radius: 4px 4px 0 0;
+            transition: height 0.3s ease;
+        }
+        .chart-bar:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Dashboard Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl mr-2">ID</div>
+                    <span class="text-xl font-bold text-gray-800">IncludAI DataHub</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100">
+                        <i class="fas fa-bell text-gray-600"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mr-2">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="text-sm font-medium">Admin</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-full hover:bg-gray-100" aria-label="Mobile Menu">
+                    <i class="fas fa-bars text-gray-600 text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex mt-4 flex space-x-6 border-b">
+                <a href="/home/dashboard.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Dashboard</a>
+                <a href="/home/data-collection.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Data Collection</a>
+                <a href="#" class="pb-3 px-1 text-teal-600 border-b-2 border-teal-600 font-medium">Analytics</a>
+                <a href="/home/co-design.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Co-Design & Feedback Portal</a>
+                <a href="/home/reporting.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Reporting & DaaS</a>
+                <a href="/home/resources.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Resources</a>
+                <a href="/home/user-managements.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Settings</a>
+            </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Breadcrumbs -->
+        <div class="flex items-center text-sm text-gray-600 mb-6">
+            <a href="/home/dashboard.html" class="hover:text-teal-600">Dashboard</a>
+            <i class="fas fa-chevron-right mx-2 text-xs"></i>
+            <a href="#" class="hover:text-teal-600">Analytics</a>
+            <i class="fas fa-chevron-right mx-2 text-xs"></i>
+            <span class="font-medium text-teal-600">AI Analytics Engine</span>
+        </div>
+
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">AI Analytics Engine</h1>
+                <p class="text-gray-600">Transform raw data into actionable insights for disability inclusion</p>
+            </div>
+
+            <div class="mt-4 md:mt-0">
+                <div class="flex items-center bg-white rounded-lg shadow-sm p-3">
+                    <div class="mr-4">
+                        <span class="text-sm text-gray-500">Last Analysis Run:</span>
+                        <span class="font-medium">Today, 10:42 AM</span>
+                    </div>
+                    <button class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm font-medium flex items-center">
+                        <i class="fas fa-sync-alt mr-2"></i> Rerun Pipeline
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex space-x-3 mt-4 md:mt-0">
+                <button class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg flex items-center">
+                    <i class="fas fa-play mr-2"></i> Run New Analysis
+                </button>
+                <button class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg flex items-center">
+                    <i class="fas fa-upload mr-2"></i> Upload Dataset
+                </button>
+            </div>
+        </div>
+        
+        <!-- Notification Banner -->
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-exclamation-circle text-yellow-400"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-yellow-700">
+                        <span class="font-medium">Unusual pattern detected:</span> The model found significantly fewer responses from rural areas compared to previous data collection cycles. This may affect the representativeness of the analysis.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Automated Data Pipeline Card -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-lg font-semibold text-gray-800">Automated Data Pipeline</h2>
+                <button class="text-sm text-teal-600 hover:text-teal-800 font-medium flex items-center">
+                    <i class="fas fa-history mr-1"></i> View Full History
+                </button>
+            </div>
+            
+            <div class="stepper">
+                <!-- Step 1: Data Ingestion -->
+                <div class="stepper-step completed flex items-start mb-6">
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium text-gray-800">Data Ingestion</h3>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Completed</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">Collected 1,248 responses from 8 regions</p>
+                        <div class="mt-2">
+                            <button class="text-xs text-teal-600 hover:text-teal-800 font-medium flex items-center">
+                                <i class="fas fa-file-alt mr-1"></i> View Logs
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Cleaning & Normalization -->
+                <div class="stepper-step completed flex items-start mb-6">
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium text-gray-800">Cleaning & Normalization</h3>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Completed</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">Removed 42 duplicate rows, standardized 18 fields</p>
+                        <div class="mt-2">
+                            <button class="text-xs text-teal-600 hover:text-teal-800 font-medium flex items-center">
+                                <i class="fas fa-file-alt mr-1"></i> View Logs
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Bias Check -->
+                <div class="stepper-step warning flex items-start mb-6">
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium text-gray-800">Bias Check</h3>
+                            <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Warning</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">Potential underrepresentation of rural respondents (18% vs expected 32%)</p>
+                        <div class="mt-2">
+                            <button class="text-xs text-teal-600 hover:text-teal-800 font-medium flex items-center">
+                                <i class="fas fa-file-alt mr-1"></i> View Logs
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4: AI Inference -->
+                <div class="stepper-step completed flex items-start">
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-medium text-gray-800">AI Inference</h3>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Completed</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">Generated 14 insights across 3 models</p>
+                        <div class="mt-2">
+                            <button class="text-xs text-teal-600 hover:text-teal-800 font-medium flex items-center">
+                                <i class="fas fa-file-alt mr-1"></i> View Logs
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AI Models & Insights Panel -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-lg font-semibold text-gray-800">AI Models & Insights</h2>
+                <div class="flex space-x-2">
+                    <button class="text-sm text-gray-600 hover:text-teal-600 font-medium flex items-center">
+                        <i class="fas fa-download mr-1"></i> Export
+                    </button>
+                    <button class="text-sm text-gray-600 hover:text-teal-600 font-medium flex items-center">
+                        <i class="fas fa-question-circle mr-1"></i> Help
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="border-b border-gray-200 mb-6">
+                <nav class="-mb-px flex space-x-8">
+                    <button onclick="switchTab('service-gap')" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-teal-500 text-teal-600">
+                        Service Gap Mapping
+                    </button>
+                    <button onclick="switchTab('resource-forecast')" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        Resource Forecasting
+                    </button>
+                    <button onclick="switchTab('bias-detection')" class="tab-button whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                        Bias Detection
+                    </button>
+                </nav>
+            </div>
+            
+            <!-- Tab Contents -->
+            <div id="service-gap" class="tab-content active">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="map-container">
+                        <!-- Simulated map with regions -->
+                        <div class="map-region" style="width: 80px; height: 80px; left: 30%; top: 20%;">A</div>
+                        <div class="map-region highlight" style="width: 120px; height: 120px; left: 60%; top: 30%;">B</div>
+                        <div class="map-region" style="width: 70px; height: 70px; left: 20%; top: 50%;">C</div>
+                        <div class="map-region" style="width: 90px; height: 90px; left: 70%; top: 60%;">D</div>
+                        <div class="absolute bottom-4 left-4 bg-white p-2 rounded shadow-sm text-sm">
+                            <div class="flex items-center mb-1"><div class="w-3 h-3 rounded-full bg-teal-500 mr-2"></div> Adequate services</div>
+                            <div class="flex items-center"><div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div> Service gaps</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800 mb-3">Key Insights</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-blue-50 rounded-lg">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-info-circle text-blue-500"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-blue-700">
+                                            <span class="font-medium">Region B</span> shows significant gaps in services for mobility-impaired individuals, with only 23% coverage compared to the national average of 62%.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-yellow-50 rounded-lg">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-exclamation-triangle text-yellow-500"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-yellow-700">
+                                            <span class="font-medium">Urban-rural disparity:</span> Rural areas in all regions have 40% fewer accessible facilities per capita than urban centers.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-green-50 rounded-lg">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-check-circle text-green-500"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-green-700">
+                                            <span class="font-medium">Region D</span> has made significant improvements in visual impairment services, now exceeding national standards by 15%.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="resource-forecast" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div>
+                        <div class="h-64 bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="font-medium text-gray-800">Projected Needs by Disability Type</h3>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Next 12 months</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-5 h-40 gap-2 items-end">
+                                <div class="h-full flex flex-col justify-end">
+                                    <div class="chart-bar" style="height: 70%;"></div>
+                                    <p class="text-xs text-center mt-1">Visual</p>
+                                </div>
+                                <div class="h-full flex flex-col justify-end">
+                                    <div class="chart-bar" style="height: 40%;"></div>
+                                    <p class="text-xs text-center mt-1">Hearing</p>
+                                </div>
+                                <div class="h-full flex flex-col justify-end">
+                                    <div class="chart-bar" style="height: 85%;"></div>
+                                    <p class="text-xs text-center mt-1">Mobility</p>
+                                </div>
+                                <div class="h-full flex flex-col justify-end">
+                                    <div class="chart-bar" style="height: 60%;"></div>
+                                    <p class="text-xs text-center mt-1">Cognitive</p>
+                                </div>
+                                <div class="h-full flex flex-col justify-end">
+                                    <div class="chart-bar" style="height: 55%;"></div>
+                                    <p class="text-xs text-center mt-1">Other</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800 mb-3">Key Insights</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-purple-50 rounded-lg">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-chart-line text-purple-500"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-purple-700">
+                                            <span class="font-medium">Mobility aids demand</span> is projected to increase by 42% in the next year, primarily driven by aging populations in Regions A and C.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-indigo-50 rounded-lg">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-school text-indigo-500"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-indigo-700">
+                                            <span class="font-medium">Inclusive education:</span> 28 additional accessible classrooms will be needed to meet projected enrollment increases.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-pink-50 rounded-lg">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-medkit text-pink-500"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-pink-700">
+                                            <span class="font-medium">Healthcare equipment:</span> Models suggest a shortage of 120 specialized diagnostic devices for cognitive impairments.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="bias-detection" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div>
+                        <div class="h-64 bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="font-medium text-gray-800">Response Distribution by Demographic</h3>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">Bias Alert</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-4 h-40">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-24 h-24 relative">
+                                        <svg viewBox="0 0 36 36" class="circular-chart">
+                                            <path class="circle"
+                                                stroke-dasharray="60, 100"
+                                                d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            />
+                                        </svg>
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <span class="text-lg font-bold">60%</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-center mt-1">Urban</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="w-24 h-24 relative">
+                                        <svg viewBox="0 0 36 36" class="circular-chart">
+                                            <path class="circle"
+                                                stroke-dasharray="30, 100"
+                                                d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            />
+                                        </svg>
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <span class="text-lg font-bold">30%</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-center mt-1">Rural</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="w-24 h-24 relative">
+                                        <svg viewBox="0 0 36 36" class="circular-chart">
+                                            <path class="circle"
+                                                stroke-dasharray="10, 100"
+                                                d="M18 2.0845
+                                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                            />
+                                        </svg>
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <span class="text-lg font-bold">10%</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-center mt-1">Remote</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800 mb-3">Key Insights</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-red-50 rounded-lg">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-exclamation-triangle text-red-500"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-red-700">
+                                            <span class="font-medium">Geographic bias:</span> Rural and remote areas are significantly underrepresented (30% and 10% respectively) compared to their actual population distribution (40% and 20%).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-orange-50 rounded-lg">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-venus-mars text-orange-500"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-orange-700">
+                                            <span class="font-medium">Gender imbalance:</span> Female respondents account for only 35% of the dataset, potentially skewing gender-specific insights.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 bg-amber-50 rounded-lg">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 mt-1">
+                                        <i class="fas fa-user-friends text-amber-500"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-amber-700">
+                                            <span class="font-medium">Age distribution:</span> The 18-35 age group is overrepresented (58%) compared to national demographics (42%).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Natural-Language Summary Generator -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold text-gray-800">Executive Summary</h2>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-600 mr-2">Language:</span>
+                        <div class="relative">
+                            <select class="appearance-none bg-gray-100 border border-gray-300 rounded-md py-1 px-3 pr-8 text-sm focus:outline-none focus:ring-1 focus:ring-teal-500">
+                                <option>English</option>
+                                <option>French</option>
+                                <option>Spanish</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-600 mr-2">Mode:</span>
+                        <div class="relative">
+                            <select class="appearance-none bg-gray-100 border border-gray-300 rounded-md py-1 px-3 pr-8 text-sm focus:outline-none focus:ring-1 focus:ring-teal-500">
+                                <option>Layperson</option>
+                                <option>Technical</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                <p class="text-gray-700">
+                    <span class="font-medium">Key Findings:</span> In Region B, persons with mobility impairments are significantly underserved, with only 23% service coverage compared to the national average of 62%. Our models forecast a 42% increase in demand for mobility aids in the next year, primarily driven by aging populations. Data collection shows geographic bias, with rural and remote areas underrepresented (30% and 10% respectively) compared to their actual population distribution.
+                </p>
+                <p class="text-gray-700 mt-2">
+                    <span class="font-medium">Recommendations:</span> Prioritize resource allocation to Region B for mobility services. Implement targeted data collection in rural areas to improve representativeness. Consider expanding accessible education facilities, with 28 additional classrooms needed to meet projected demand.
+                </p>
+            </div>
+            
+            <div class="flex justify-between">
+                <div class="flex space-x-3">
+                    <button class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm font-medium flex items-center">
+                        <i class="fas fa-sync-alt mr-2"></i> Regenerate Summary
+                    </button>
+                    <button class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-md text-sm font-medium flex items-center">
+                        <i class="fas fa-download mr-2"></i> Download as PDF
+                    </button>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-sm text-gray-600 mr-2">Confidence:</span>
+                    <span class="text-sm font-medium text-teal-600">High (87%)</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Feedback & Trust Panel -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">About Our Models</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <h3 class="font-medium text-gray-800 mb-2">Technical Details</h3>
+                    <p class="text-sm text-gray-600 mb-3">
+                        Our analytics engine combines <span class="tooltip">XGBoost<span class="tooltip-text">An optimized machine learning algorithm that works well with structured data</span></span> for service gap classification and <span class="tooltip">LSTM neural networks<span class="tooltip-text">A type of recurrent neural network that can learn patterns in sequential data</span></span> for demand forecasting. Models are trained on regional disability data from 2015-2023.
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        <span class="font-medium">Data Sources:</span> National Disability Registry (62%), Local Health Surveys (23%), NGO Reports (15%)
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-medium text-gray-800 mb-2">Ethics & Fairness</h3>
+                    <p class="text-sm text-gray-600 mb-3">
+                        All models undergo regular bias audits using <span class="tooltip">AI Fairness 360<span class="tooltip-text">An open-source toolkit from IBM to detect and mitigate bias in machine learning models</span></span>. Demographic parity metrics are monitored across all predictions.
+                    </p>
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-600 mr-2">Last Audit:</span>
+                        <span class="text-sm font-medium">June 15, 2023</span>
+                        <button class="ml-2 text-xs text-teal-600 hover:text-teal-800 font-medium">
+                            <i class="fas fa-external-link-alt mr-1"></i> View Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="font-medium text-gray-800 mb-2">Was this analysis helpful?</h3>
+                        <div class="flex items-center">
+                            <button class="text-gray-400 hover:text-yellow-500 focus:outline-none">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-yellow-500 focus:outline-none ml-1">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-yellow-500 focus:outline-none ml-1">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-yellow-500 focus:outline-none ml-1">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="text-gray-400 hover:text-yellow-500 focus:outline-none ml-1">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <span class="text-sm text-gray-500 ml-2">(Rate this analysis)</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <button class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-md text-sm font-medium flex items-center">
+                            <i class="fas fa-flag mr-2"></i> Report an Issue
+                        </button>
+                        <button class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md text-sm font-medium flex items-center">
+                            <i class="fas fa-comment-alt mr-2"></i> Provide Feedback
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-gray-600">© 2023 IncludAI DataHub. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Accessibility</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Update tab button styles
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('border-teal-500', 'text-teal-600');
+                button.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+            });
+            
+            // Highlight current tab button
+            event.currentTarget.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+            event.currentTarget.classList.add('border-teal-500', 'text-teal-600');
+        }
+        
+        // Simulate chart animations
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const bars = document.querySelectorAll('.chart-bar');
+                bars.forEach(bar => {
+                    bar.style.transition = 'height 0.5s ease';
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>

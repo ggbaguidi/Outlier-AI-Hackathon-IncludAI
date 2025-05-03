@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection Module | IncludAI DataHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Alegreya:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/png;base64,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" type="image/png">
+    <style>
+        body {
+            font-family: 'Alegreya', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .question-card {
+            transition: all 0.2s ease;
+        }
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .drag-enter {
+            border: 2px dashed #4fd1c5;
+            background-color: #f0fdfa;
+        }
+        .preview-container {
+            min-height: 500px;
+            background-color: #f8fafc;
+        }
+        @media (max-width: 768px) {
+            .builder-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Dashboard Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl mr-2">ID</div>
+                    <span class="text-xl font-bold text-gray-800">IncludAI DataHub</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100">
+                        <i class="fas fa-bell text-gray-600"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mr-2">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="text-sm font-medium">Admin</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-full hover:bg-gray-100" aria-label="Mobile Menu">
+                    <i class="fas fa-bars text-gray-600 text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex mt-4 flex space-x-6 border-b">
+                <a href="/home/dashboard.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Dashboard</a>
+                <a href="#" class="pb-3 px-1 text-teal-600 border-b-2 border-teal-600 font-medium">Data Collection</a>
+                <a href="/home/analytics.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Analytics</a>
+                <a href="/home/co-design.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Co-Design & Feedback Portal</a>
+                <a href="/home/reporting.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Reporting & DaaS</a>
+                <a href="/home/resources.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Resources</a>
+                <a href="/home/user-managements.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-6">
+        <!-- Breadcrumbs -->
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+            <a href="/home/dashboard.html" class="hover:text-teal-600">Dashboard</a>
+            <i class="fas fa-chevron-right mx-2 text-xs"></i>
+            <span class="font-medium text-teal-600">Data Collection</span>
+        </div>
+
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">Survey Builder</h1>
+                <p class="text-gray-600">Collect confidently, knowing your data is safe and inclusive</p>
+            </div>
+            <button class="mt-4 md:mt-0 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                <i class="fas fa-plus mr-2"></i> New Survey
+            </button>
+        </div>
+
+        <!-- Main Builder Grid -->
+        <div class="builder-grid grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Question Bank -->
+            <div class="bg-white rounded-lg shadow p-4 lg:col-span-1">
+                <h2 class="text-lg font-medium text-gray-800 mb-4">Question Bank</h2>
+                
+                <div class="space-y-3">
+                    <div class="question-card bg-white border border-gray-200 rounded-md p-3 cursor-move" draggable="true" data-type="multiple-choice">
+                        <div class="flex items-start">
+                            <div class="bg-teal-100 text-teal-600 p-2 rounded mr-3">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800">Multiple Choice</h3>
+                                <p class="text-xs text-gray-500">Single or multiple selection options</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question-card bg-white border border-gray-200 rounded-md p-3 cursor-move" draggable="true" data-type="text">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-2 rounded mr-3">
+                                <i class="fas fa-font"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800">Text Input</h3>
+                                <p class="text-xs text-gray-500">Short or long text responses</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question-card bg-white border border-gray-200 rounded-md p-3 cursor-move" draggable="true" data-type="scale">
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 text-purple-600 p-2 rounded mr-3">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800">Scale</h3>
+                                <p class="text-xs text-gray-500">Numeric or Likert scale questions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question-card bg-white border border-gray-200 rounded-md p-3 cursor-move" draggable="true" data-type="gps">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 text-green-600 p-2 rounded mr-3">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800">GPS Capture</h3>
+                                <p class="text-xs text-gray-500">Record respondent location</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="question-card bg-white border border-gray-200 rounded-md p-3 cursor-move" draggable="true" data-type="media">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-100 text-yellow-600 p-2 rounded mr-3">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-gray-800">Media Upload</h3>
+                                <p class="text-xs text-gray-500">Photo, video or audio responses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h3 class="text-sm font-medium text-gray-700 mb-2">Inclusive Templates</h3>
+                    <div class="space-y-2">
+                        <button class="w-full text-left p-2 text-sm text-gray-700 hover:bg-gray-50 rounded flex items-center">
+                            <i class="fas fa-users mr-2 text-teal-500"></i> Washington Group Short Set
+                        </button>
+                        <button class="w-full text-left p-2 text-sm text-gray-700 hover:bg-gray-50 rounded flex items-center">
+                            <i class="fas fa-wheelchair mr-2 text-teal-500"></i> Disability Inclusion
+                        </button>
+                        <button class="w-full text-left p-2 text-sm text-gray-700 hover:bg-gray-50 rounded flex items-center">
+                            <i class="fas fa-venus-mars mr-2 text-teal-500"></i> Gender Equality
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Survey Canvas -->
+            <div class="bg-white rounded-lg shadow p-4 lg:col-span-2">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-medium text-gray-800">Survey Canvas</h2>
+                    <div class="flex space-x-2">
+                        <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded" aria-label="Undo">
+                            <i class="fas fa-undo"></i>
+                        </button>
+                        <button class="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded" aria-label="Redo">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="survey-canvas" class="space-y-4 min-h-[400px] p-4 border-2 border-dashed border-gray-200 rounded-lg">
+                    <div class="bg-white border border-gray-200 rounded-md p-4 relative group">
+                        <div class="flex justify-between items-start">
+                            <div class="w-full">
+                                <h3 class="font-medium text-gray-800 mb-2">What is your age?</h3>
+                                <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Enter your age">
+                            </div>
+                            <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="p-1 text-gray-500 hover:text-teal-500" aria-label="Edit question">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button class="p-1 text-gray-500 hover:text-red-500" aria-label="Delete question">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-md p-4 relative group">
+                        <div class="flex justify-between items-start">
+                            <div class="w-full">
+                                <h3 class="font-medium text-gray-800 mb-2">What is your gender?</h3>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <input type="radio" id="male" name="gender" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300">
+                                        <label for="male" class="ml-2 block text-sm text-gray-700">Male</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="female" name="gender" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300">
+                                        <label for="female" class="ml-2 block text-sm text-gray-700">Female</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="other" name="gender" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300">
+                                        <label for="other" class="ml-2 block text-sm text-gray-700">Other</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="prefer-not" name="gender" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300">
+                                        <label for="prefer-not" class="ml-2 block text-sm text-gray-700">Prefer not to say</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button class="p-1 text-gray-500 hover:text-teal-500" aria-label="Edit question">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button class="p-1 text-gray-500 hover:text-red-500" aria-label="Delete question">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="drop-zone" class="p-8 text-center text-gray-400 border-2 border-dashed border-gray-200 rounded-lg">
+                        <i class="fas fa-hand-pointer text-2xl mb-2"></i>
+                        <p>Drag questions here or click to add</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex justify-between items-center">
+                    <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                        <i class="fas fa-save mr-2"></i> Save Draft
+                    </button>
+                    <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                        <i class="fas fa-paper-plane mr-2"></i> Publish Survey
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Settings and Preview Section -->
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Form Settings -->
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="text-lg font-medium text-gray-800 mb-4">Form Settings</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded" checked>
+                            <span class="ml-2 block text-sm text-gray-700">Enable offline mode</span>
+                        </label>
+                        <p class="mt-1 text-xs text-gray-500">Allows data collection without internet connection</p>
+                    </div>
+                    
+                    <div>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded">
+                            <span class="ml-2 block text-sm text-gray-700">Enable GPS tagging</span>
+                        </label>
+                        <p class="mt-1 text-xs text-gray-500">Records location for each response</p>
+                    </div>
+                    
+                    <div>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded" checked>
+                            <span class="ml-2 block text-sm text-gray-700">Anonymize responses</span>
+                        </label>
+                        <p class="mt-1 text-xs text-gray-500">Automatically removes personal identifiers</p>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Default language</label>
+                        <select class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm rounded-md">
+                            <option>English</option>
+                            <option>Spanish</option>
+                            <option>French</option>
+                            <option>Arabic</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Add translations</label>
+                        <button class="mt-1 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                            <i class="fas fa-language mr-1"></i> Manage Languages
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Deployment Options -->
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="text-lg font-medium text-gray-800 mb-4">Deployment Options</h2>
+                
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Shareable Link</label>
+                        <div class="mt-1 flex rounded-md shadow-sm">
+                            <input type="text" readonly class="flex-1 min-w-0 block w-full px-3 py-2 rounded-none rounded-l-md border-r-0 border-gray-300 focus:ring-teal-500 focus:border-teal-500 sm:text-sm" value="https://includai.org/survey/abc123">
+                            <button class="inline-flex items-center px-3 py-2 border border-l-0 border-gray-300 rounded-r-md bg-gray-50 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-1 focus:ring-teal-500 focus:border-teal-500">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">QR Code</label>
+                        <div class="mt-1 p-4 bg-white border border-gray-200 rounded-md inline-block">
+                            <div class="w-32 h-32 bg-gray-100 flex items-center justify-center">
+                                <i class="fas fa-qrcode text-4xl text-gray-400"></i>
+                            </div>
+                        </div>
+                        <button class="mt-2 inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                            <i class="fas fa-download mr-1"></i> Download
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Assign to Team</label>
+                        <select class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm rounded-md">
+                            <option>All teams</option>
+                            <option>Field Team A</option>
+                            <option>Field Team B</option>
+                            <option>Remote Partners</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Preview Panel -->
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="text-lg font-medium text-gray-800 mb-4">Mobile Preview</h2>
+                
+                <div class="preview-container relative border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 bg-gray-800 h-10 flex items-center justify-between px-4">
+                        <span class="text-white text-sm">9:41 AM</span>
+                        <div class="flex space-x-2">
+                            <i class="fas fa-signal text-white text-xs"></i>
+                            <i class="fas fa-wifi text-white text-xs"></i>
+                            <i class="fas fa-battery-full text-white text-xs"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-12 px-4 pb-4">
+                        <div class="text-center mb-6">
+                            <h3 class="text-lg font-medium text-gray-800">Community Survey</h3>
+                            <p class="text-sm text-gray-500">Please answer the following questions</p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">What is your age?</label>
+                                <input type="number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Enter your age">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">What is your gender?</label>
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <input type="radio" id="preview-male" name="preview-gender" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300">
+                                        <label for="preview-male" class="ml-2 block text-sm text-gray-700">Male</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="preview-female" name="preview-gender" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300">
+                                        <label for="preview-female" class="ml-2 block text-sm text-gray-700">Female</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="preview-other" name="preview-gender" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300">
+                                        <label for="preview-other" class="ml-2 block text-sm text-gray-700">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex justify-between">
+                            <button class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                Back
+                            </button>
+                            <button class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-teal-600 hover:bg-teal-700">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Survey Management Table -->
+        <div class="mt-8 bg-white rounded-lg shadow overflow-hidden">
+            <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <h2 class="text-lg font-medium text-gray-800">Your Surveys</h2>
+                    <div class="mt-2 md:mt-0 flex items-center">
+                        <div class="relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-search text-gray-400"></i>
+                            </div>
+                            <input type="text" class="focus:ring-teal-500 focus:border-teal-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="Search surveys...">
+                        </div>
+                        <select class="ml-2 block pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm rounded-md">
+                            <option>All statuses</option>
+                            <option>Draft</option>
+                            <option>Live</option>
+                            <option>Closed</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Responses</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Created</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10 bg-teal-100 rounded-full flex items-center justify-center text-teal-600">
+                                        <i class="fas fa-poll"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Community Needs Assessment</div>
+                                        <div class="text-sm text-gray-500">Version 2.1</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Live</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1,243</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 15, 2023</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button class="text-teal-600 hover:text-teal-900 mr-3">Edit</button>
+                                <button class="text-gray-600 hover:text-gray-900 mr-3">Clone</button>
+                                <button class="text-red-600 hover:text-red-900">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Disability Inclusion Survey</div>
+                                        <div class="text-sm text-gray-500">Washington Group Set</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Draft</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">June 2, 2023</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button class="text-teal-600 hover:text-teal-900 mr-3">Edit</button>
+                                <button class="text-gray-600 hover:text-gray-900 mr-3">Clone</button>
+                                <button class="text-red-600 hover:text-red-900">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600">
+                                        <i class="fas fa-venus-mars"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Gender Equality Index</div>
+                                        <div class="text-sm text-gray-500">Annual Report</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">Closed</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">892</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">March 8, 2023</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button class="text-teal-600 hover:text-teal-900 mr-3">Edit</button>
+                                <button class="text-gray-600 hover:text-gray-900 mr-3">Clone</button>
+                                <button class="text-red-600 hover:text-red-900">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+                <div class="flex-1 flex justify-between sm:hidden">
+                    <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                        Previous
+                    </button>
+                    <button class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                        Next
+                    </button>
+                </div>
+                <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                    <div>
+                        <p class="text-sm text-gray-700">
+                            Showing <span class="font-medium">1</span> to <span class="font-medium">3</span> of <span class="font-medium">8</span> results
+                        </p>
+                    </div>
+                    <div>
+                        <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                            <button class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <span class="sr-only">Previous</span>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button aria-current="page" class="z-10 bg-teal-50 border-teal-500 text-teal-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                1
+                            </button>
+                            <button class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                2
+                            </button>
+                            <button class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                3
+                            </button>
+                            <button class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <span class="sr-only">Next</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-gray-600">© 2023 IncludAI DataHub. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Accessibility</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Drag and drop functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const questionCards = document.querySelectorAll('.question-card');
+            const dropZone = document.getElementById('drop-zone');
+            const surveyCanvas = document.getElementById('survey-canvas');
+            
+            // Make question cards draggable
+            questionCards.forEach(card => {
+                card.addEventListener('dragstart', function(e) {
+                    e.dataTransfer.setData('text/plain', card.dataset.type);
+                    card.classList.add('opacity-50');
+                });
+                
+                card.addEventListener('dragend', function() {
+                    card.classList.remove('opacity-50');
+                });
+            });
+            
+            // Drop zone highlighting
+            dropZone.addEventListener('dragenter', function(e) {
+                e.preventDefault();
+                dropZone.classList.add('drag-enter');
+            });
+            
+            dropZone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+            });
+            
+            dropZone.addEventListener('dragleave', function() {
+                dropZone.classList.remove('drag-enter');
+            });
+            
+            dropZone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                dropZone.classList.remove('drag-enter');
+                
+                const questionType = e.dataTransfer.getData('text/plain');
+                addQuestionToCanvas(questionType);
+            });
+            
+            // Function to add question to canvas
+            function addQuestionToCanvas(type) {
+                let questionHtml = '';
+                
+                switch(type) {
+                    case 'multiple-choice':
+                        questionHtml = `
+                            <div class="bg-white border border-gray-200 rounded-md p-4 relative group">
+                                <div class="flex justify-between items-start">
+                                    <div class="w-full">
+                                        <h3 class="font-medium text-gray-800 mb-2">New Multiple Choice Question</h3>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center">
+                                                <input type="radio" name="new-mc" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300">
+                                                <input type="text" class="ml-2 block w-full px-2 py-1 border-0 border-b border-gray-300 focus:ring-0 focus:border-teal-500" placeholder="Option 1">
+                                            </div>
+                                            <div class="flex items-center">
+                                                <input type="radio" name="new-mc" class="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300">
+                                                <input type="text" class="ml-2 block w-full px-2 py-1 border-0 border-b border-gray-300 focus:ring-0 focus:border-teal-500" placeholder="Option 2">
+                                            </div>
+                                            <button class="mt-1 text-sm text-teal-600 hover:text-teal-700 flex items-center">
+                                                <i class="fas fa-plus mr-1"></i> Add option
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button class="p-1 text-gray-500 hover:text-teal-500" aria-label="Edit question">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                        <button class="p-1 text-gray-500 hover:text-red-500" aria-label="Delete question">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'text':
+                        questionHtml = `
+                            <div class="bg-white border border-gray-200 rounded-md p-4 relative group">
+                                <div class="flex justify-between items-start">
+                                    <div class="w-full">
+                                        <h3 class="font-medium text-gray-800 mb-2">New Text Question</h3>
+                                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Short text answer">
+                                    </div>
+                                    <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button class="p-1 text-gray-500 hover:text-teal-500" aria-label="Edit question">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                        <button class="p-1 text-gray-500 hover:text-red-500" aria-label="Delete question">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'scale':
+                        questionHtml = `
+                            <div class="bg-white border border-gray-200 rounded-md p-4 relative group">
+                                <div class="flex justify-between items-start">
+                                    <div class="w-full">
+                                        <h3 class="font-medium text-gray-800 mb-2">New Scale Question</h3>
+                                        <div class="flex items-center justify-between mt-2">
+                                            <span class="text-sm text-gray-500">1 (Low)</span>
+                                            <div class="flex space-x-2">
+                                                ${Array(5).fill().map((_, i) => `<button class="w-8 h-8 rounded-full border border-gray-300 hover:border-teal-500 hover:bg-teal-50">${i+1}</button>`).join('')}
+                                            </div>
+                                            <span class="text-sm text-gray-500">5 (High)</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button class="p-1 text-gray-500 hover:text-teal-500" aria-label="Edit question">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                        <button class="p-1 text-gray-500 hover:text-red-500" aria-label="Delete question">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'gps':
+                        questionHtml = `
+                            <div class="bg-white border border-gray-200 rounded-md p-4 relative group">
+                                <div class="flex justify-between items-start">
+                                    <div class="w-full">
+                                        <h3 class="font-medium text-gray-800 mb-2">Location Capture</h3>
+                                        <div class="mt-2 p-3 bg-gray-50 rounded-md text-center">
+                                            <i class="fas fa-map-marker-alt text-2xl text-teal-500 mb-2"></i>
+                                            <p class="text-sm text-gray-600">GPS location will be captured when respondent answers this question</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button class="p-1 text-gray-500 hover:text-teal-500" aria-label="Edit question">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                        <button class="p-1 text-gray-500 hover:text-red-500" aria-label="Delete question">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'media':
+                        questionHtml = `
+                            <div class="bg-white border border-gray-200 rounded-md p-4 relative group">
+                                <div class="flex justify-between items-start">
+                                    <div class="w-full">
+                                        <h3 class="font-medium text-gray-800 mb-2">Media Upload</h3>
+                                        <div class="mt-2 p-3 bg-gray-50 rounded-md text-center">
+                                            <div class="flex justify-center space-x-4 mb-3">
+                                                <button class="p-3 rounded-full bg-blue-100 text-blue-500 hover:bg-blue-200">
+                                                    <i class="fas fa-camera"></i>
+                                                </button>
+                                                <button class="p-3 rounded-full bg-purple-100 text-purple-500 hover:bg-purple-200">
+                                                    <i class="fas fa-video"></i>
+                                                </button>
+                                                <button class="p-3 rounded-full bg-green-100 text-green-500 hover:bg-green-200">
+                                                    <i class="fas fa-microphone"></i>
+                                                </button>
+                                            </div>
+                                            <p class="text-sm text-gray-600">Respondent can upload photos, videos or audio</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <button class="p-1 text-gray-500 hover:text-teal-500" aria-label="Edit question">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                        <button class="p-1 text-gray-500 hover:text-red-500" aria-label="Delete question">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                }
+                
+                // Insert before the drop zone
+                dropZone.insertAdjacentHTML('beforebegin', questionHtml);
+                
+                // If drop zone is empty, hide it after first question is added
+                if(surveyCanvas.children.length > 1) {
+                    dropZone.classList.add('hidden');
+                }
+            }
+            
+            // Simulate clicking on Washington Group template
+            document.querySelectorAll('.question-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const type = card.dataset.type;
+                    addQuestionToCanvas(type);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

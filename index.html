@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IncludAI DataHub | AI-Driven Disability Data for Inclusion</title>
+    <meta name="description" content="Aggregate, analyze & act on disaggregated disability data with AI. Empower inclusive policy & programs.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Alegreya:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/png;base64,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" type="image/png">
+    <style>
+        body {
+            font-family: 'Alegreya', serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0,179,159,0.1) 0%, rgba(138,43,226,0.1) 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            width: 40px;
+            height: 2px;
+            background: #00b39f;
+        }
+        @media (max-width: 768px) {
+            .timeline-step:not(:last-child):after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl mr-2">ID</div>
+                <span class="text-xl font-bold text-gray-800">IncludAI DataHub</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-teal-600 transition">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-teal-600 transition">How It Works</a>
+                <a href="#partners" class="text-gray-600 hover:text-teal-600 transition">Partners</a>
+                <a href="#contact" class="text-gray-600 hover:text-teal-600 transition">Contact</a>
+                <a href="/auth/login.html" class="text-gray-600 hover:text-teal-600 transition">Login</a>
+            </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 md:py-32">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Turning Data into Inclusion: AI-Powered Disability Insights</h1>
+                <p class="text-xl text-gray-600 mb-8">Empower governments, NGOs & funders with real-time, disaggregated data on 1.3 billion people worldwide.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#demo" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 text-center">Request a Demo</a>
+                    <a href="#learn" class="border-2 border-teal-600 text-teal-600 hover:bg-teal-50 font-bold py-3 px-8 rounded-lg transition duration-300 text-center">Learn How It Works</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+                     alt="Diverse team collaborating around data visualization" 
+                     class="rounded-xl shadow-xl w-full h-auto max-h-96 object-cover">
+                <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-purple-500 rounded-xl opacity-20"></div>
+                <div class="absolute -top-4 -right-4 w-20 h-20 bg-teal-400 rounded-xl opacity-20"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Impact Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">The Data Gap Is Real</h2>
+            
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <p class="text-xl text-gray-600 mb-8">"Over 1.3 billion people with disabilities remain under-counted, leaving programs misdirected and under-funded."</p>
+                    <p class="text-xl text-gray-600 mb-8">"IncludAI DataHub fills that gap with secure, AI-driven insights."</p>
+                </div>
+                <div class="md:w-1/2 flex flex-wrap justify-center">
+                    <div class="w-full sm:w-1/2 p-4">
+                        <div class="bg-teal-50 p-6 rounded-xl h-full">
+                            <div class="text-5xl font-bold text-teal-600 mb-4">1.3B+</div>
+                            <p class="text-gray-600">People with disabilities globally who are often under-counted in traditional data collection</p>
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-1/2 p-4">
+                        <div class="bg-purple-50 p-6 rounded-xl h-full">
+                            <div class="text-5xl font-bold text-purple-600 mb-4">30%</div>
+                            <p class="text-gray-600">Survey non-response rate in traditional disability data collection methods</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+                <div class="bg-gray-100 p-4 rounded-lg flex flex-col items-center">
+                    <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 mb-3">
+                        <i class="fas fa-user-shield text-xl"></i>
+                    </div>
+                    <p class="text-center text-sm">Privacy-First Design</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg flex flex-col items-center">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-3">
+                        <i class="fas fa-brain text-xl"></i>
+                    </div>
+                    <p class="text-center text-sm">AI-Powered Analysis</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg flex flex-col items-center">
+                    <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 mb-3">
+                        <i class="fas fa-globe text-xl"></i>
+                    </div>
+                    <p class="text-center text-sm">Global Standards</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg flex flex-col items-center">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-3">
+                        <i class="fas fa-hands-helping text-xl"></i>
+                    </div>
+                    <p class="text-center text-sm">Co-Design Approach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">Key Features</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 mb-6">
+                        <i class="fas fa-mobile-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Custom Surveys & Offline Data</h3>
+                    <p class="text-gray-600 mb-4">Create accessible surveys that work online and offline, reaching communities with limited connectivity.</p>
+                    <a href="#" class="text-teal-600 font-medium inline-flex items-center">Read more <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-6">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">AI Analytics & Bias Alerts</h3>
+                    <p class="text-gray-600 mb-4">Our AI identifies patterns and flags potential biases in your data collection and analysis processes.</p>
+                    <a href="#" class="text-purple-600 font-medium inline-flex items-center">Read more <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 mb-6">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Co-Design Portal</h3>
+                    <p class="text-gray-600 mb-4">Collaborate directly with disability organizations to ensure your data tools meet real community needs.</p>
+                    <a href="#" class="text-teal-600 font-medium inline-flex items-center">Read more <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-6">
+                        <i class="fas fa-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Data-as-a-Service APIs</h3>
+                    <p class="text-gray-600 mb-4">Integrate disability data directly into your existing systems with our developer-friendly APIs.</p>
+                    <a href="#" class="text-purple-600 font-medium inline-flex items-center">Read more <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">How It Works</h2>
+            
+            <div class="flex flex-col md:flex-row justify-between items-stretch">
+                <!-- Step 1 -->
+                <div class="md:w-1/3 p-6 relative timeline-step">
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <div class="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center text-white text-xl font-bold mb-6">1</div>
+                        <h3 class="text-xl font-bold mb-4">Collect</h3>
+                        <p class="text-gray-600">Flexible surveys on web & mobile with offline support to reach communities with limited connectivity. Our accessible design ensures participation from people with diverse disabilities.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="md:w-1/3 p-6 relative timeline-step">
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl font-bold mb-6">2</div>
+                        <h3 class="text-xl font-bold mb-4">Analyze</h3>
+                        <p class="text-gray-600">AI cleans, normalizes & uncovers service gaps while checking for biases. Our algorithms identify patterns that traditional methods miss, providing deeper insights into disability inclusion.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="md:w-1/3 p-6">
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <div class="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center text-white text-xl font-bold mb-6">3</div>
+                        <h3 class="text-xl font-bold mb-4">Act</h3>
+                        <p class="text-gray-600">Export reports, drive policy change, and measure SDG impact. Turn insights into action with our policy recommendations and program evaluation tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof & Partners Section -->
+    <section id="partners" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16">Trusted By Leading Organizations</h2>
+            
+            <!-- Logos Carousel -->
+            <div class="flex flex-wrap justify-center items-center gap-12 mb-16">
+                <img src="https://tukuz.com/wp-content/uploads/2020/07/sightsavers-logo-vector.png"
+                     alt="Sightsavers logo" 
+                     class="h-12 opacity-70 hover:opacity-100 transition" 
+                     style="filter: grayscale(100%)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/World_Health_Organization_Logo.svg" 
+                     alt="WHO logo" 
+                     class="h-12 opacity-70 hover:opacity-100 transition" 
+                     style="filter: grayscale(100%)">
+                <img src="https://disabilityin.org/wp-content/uploads/2019/05/logo-2x-300x114.png" 
+                     alt="Disability:IN logo" 
+                     class="h-12 opacity-70 hover:opacity-100 transition" 
+                     style="filter: grayscale(100%)">
+                <img src="https://s2-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/728/400/original/MastercardFdn_Colour-POS.png?1563983024" 
+                     alt="Mastercard Foundation logo" 
+                     class="h-12 opacity-70 hover:opacity-100 transition" 
+                     style="filter: grayscale(100%)">
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-teal-600 mr-4">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Dr. Amina K.</h4>
+                            <p class="text-gray-500 text-sm">Director, National Disability Council</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"IncludAI DataHub transformed how we collect and use disability data. For the first time, we have real-time insights that actually reflect the diversity of our community's needs."</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mr-4">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos M.</h4>
+                            <p class="text-gray-500 text-sm">Program Manager, Global NGO</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The AI bias detection has been invaluable. We discovered subtle exclusion patterns in our survey methods that we never would have caught otherwise. Now our programs reach 40% more people."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-16 bg-gradient-to-r from-teal-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Close the Disability Data Gap?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join governments, NGOs and funders who are making data-driven decisions for inclusion.</p>
+            <a href="#pilot" class="bg-white text-teal-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition duration-300 inline-block">Schedule Your Pilot</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl mr-2">ID</div>
+                        <span class="text-xl font-bold">IncludAI DataHub</span>
+                    </div>
+                    <p class="text-gray-400">AI-powered disability data for inclusive policy and programs.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Case Studies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Research</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Webinars</a></li>
+                    </ul>
+                </div>
+                
+                <div id="contact">
+                    <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-envelope mr-2 text-teal-400"></i> <a href="mailto:hello@includai.org" class="text-gray-400 hover:text-white transition">hello@includai.org</a></li>
+                        <li class="flex items-center"><i class="fas fa-phone mr-2 text-purple-400"></i> <span class="text-gray-400">+229 (015) 244-5460</span></li>
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-teal-400"></i> <span class="text-gray-400">Global Headquarters</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-500 text-sm">© 2023 IncludAI DataHub. All rights reserved.</p>
+                    <p class="text-gray-500 text-sm mt-1">Committed to WCAG AA accessibility standards.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full flex items-center justify-center transition" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile menu toggle (would be expanded in production)
+        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+            // This would toggle a mobile menu in production
+            alert('Mobile menu would open here in production');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting & DaaS | IncludAI DataHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Alegreya:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/png;base64,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" type="image/png">
+    <style>
+        body {
+            font-family: 'Alegreya', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .report-preview {
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="40" height="40" x="0" y="0" fill="%23e5e7eb"/><rect width="40" height="40" x="60" y="0" fill="%23e5e7eb"/><rect width="40" height="40" x="0" y="60" fill="%23e5e7eb"/><rect width="40" height="40" x="60" y="60" fill="%23e5e7eb"/></svg>');
+            background-size: 100px 100px;
+        }
+        
+        .api-endpoint {
+            font-family: monospace;
+            background-color: #f3f4f6;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        
+        .tier-card {
+            transition: all 0.2s ease;
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tier-card.popular {
+            border-top: 4px solid #14b8a6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl mr-2">ID</div>
+                    <span class="text-xl font-bold text-gray-800">IncludAI DataHub</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100">
+                        <i class="fas fa-bell text-gray-600"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mr-2">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="text-sm font-medium">Admin</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-full hover:bg-gray-100" aria-label="Mobile Menu">
+                    <i class="fas fa-bars text-gray-600 text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex mt-4 flex space-x-6 border-b">
+                <a href="/home/dashboard.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Dashboard</a>
+                <a href="/home/data-collection.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Data Collection</a>
+                <a href="/home/analytics.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Analytics</a>
+                <a href="/home/co-design.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Co-Design & Feedback Portal</a>
+                <a href="#" class="pb-3 px-1 text-teal-600 border-b-2 border-teal-600 font-medium">Reporting & DaaS</a>
+                <a href="/home/resources.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Resources</a>
+                <a href="/home/user-managements.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">Reporting & Data-as-a-Service</h1>
+                <p class="text-gray-600">Generate reports, access APIs, and manage your data subscriptions</p>
+            </div>
+            <div class="mt-4 md:mt-0 flex space-x-3">
+                <button class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md flex items-center">
+                    <i class="fas fa-plus mr-2"></i> New Report
+                </button>
+                <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md flex items-center">
+                    <i class="fas fa-key mr-2"></i> API Credentials
+                </button>
+            </div>
+        </div>
+
+        <!-- Report Builder Section -->
+        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold text-gray-800">Report Builder</h2>
+                <div class="flex space-x-2">
+                    <button class="text-sm text-teal-600 hover:text-teal-700 flex items-center">
+                        <i class="fas fa-history mr-1"></i> Recent Reports
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Template Selector -->
+                <div class="lg:col-span-1">
+                    <h3 class="font-medium text-gray-700 mb-3">Select Template</h3>
+                    <div class="space-y-2">
+                        <button class="w-full text-left p-3 rounded border border-gray-200 hover:border-teal-300 hover:bg-teal-50">
+                            <div class="font-medium text-gray-800">Summary Dashboard</div>
+                            <p class="text-sm text-gray-500">Key metrics and visualizations</p>
+                        </button>
+                        <button class="w-full text-left p-3 rounded border border-gray-200 hover:border-teal-300 hover:bg-teal-50">
+                            <div class="font-medium text-gray-800">Demographic Drill-Down</div>
+                            <p class="text-sm text-gray-500">Breakdown by age, gender, disability</p>
+                        </button>
+                        <button class="w-full text-left p-3 rounded border border-gray-200 hover:border-teal-300 hover:bg-teal-50">
+                            <div class="font-medium text-gray-800">Custom Query</div>
+                            <p class="text-sm text-gray-500">Build your own report from scratch</p>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Filters -->
+                <div class="lg:col-span-1">
+                    <h3 class="font-medium text-gray-700 mb-3">Filters</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Date Range</label>
+                            <div class="flex space-x-2">
+                                <input type="date" class="w-full p-2 border border-gray-300 rounded">
+                                <input type="date" class="w-full p-2 border border-gray-300 rounded">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Region</label>
+                            <select class="w-full p-2 border border-gray-300 rounded">
+                                <option>All Regions</option>
+                                <option>Africa</option>
+                                <option>Asia</option>
+                                <option>Europe</option>
+                                <option>Americas</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Disability Type</label>
+                            <select class="w-full p-2 border border-gray-300 rounded">
+                                <option>All Types</option>
+                                <option>Visual</option>
+                                <option>Hearing</option>
+                                <option>Mobility</option>
+                                <option>Cognitive</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Preview & Export -->
+                <div class="lg:col-span-1">
+                    <h3 class="font-medium text-gray-700 mb-3">Preview & Export</h3>
+                    <div class="report-preview border border-gray-200 rounded p-4 h-48 mb-4 overflow-auto">
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                        <div class="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+                        
+                        <div class="grid grid-cols-3 gap-2 mb-4">
+                            <div class="h-20 bg-teal-100 rounded flex items-center justify-center">
+                                <span class="text-teal-800 font-bold">72%</span>
+                            </div>
+                            <div class="h-20 bg-purple-100 rounded flex items-center justify-center">
+                                <span class="text-purple-800 font-bold">1,243</span>
+                            </div>
+                            <div class="h-20 bg-gray-100 rounded flex items-center justify-center">
+                                <span class="text-gray-800 font-bold">28%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="h-4 bg-gray-200 rounded w-full mb-1"></div>
+                        <div class="h-4 bg-gray-200 rounded w-5/6 mb-1"></div>
+                        <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Format</label>
+                            <select class="w-full p-2 border border-gray-300 rounded">
+                                <option>PDF</option>
+                                <option>CSV</option>
+                                <option>Excel (XLSX)</option>
+                            </select>
+                        </div>
+                        <button class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md mt-6">
+                            Export Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API Integration Section -->
+        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold text-gray-800">API Integration</h2>
+                <button class="text-sm text-purple-600 hover:text-purple-700 flex items-center">
+                    <i class="fas fa-book mr-1"></i> API Documentation
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Endpoints -->
+                <div>
+                    <h3 class="font-medium text-gray-700 mb-3">Available Endpoints</h3>
+                    <div class="space-y-3">
+                        <div class="p-3 border border-gray-200 rounded hover:bg-gray-50">
+                            <div class="flex items-center mb-1">
+                                <span class="api-endpoint mr-2">GET /reports</span>
+                                <span class="text-xs px-2 py-1 bg-green-100 text-green-800 rounded">Public</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Retrieve a list of available reports</p>
+                        </div>
+                        <div class="p-3 border border-gray-200 rounded hover:bg-gray-50">
+                            <div class="flex items-center mb-1">
+                                <span class="api-endpoint mr-2">GET /reports/:id</span>
+                                <span class="text-xs px-2 py-1 bg-yellow-100 text-yellow-800 rounded">Auth Required</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Get details for a specific report</p>
+                        </div>
+                        <div class="p-3 border border-gray-200 rounded hover:bg-gray-50">
+                            <div class="flex items-center mb-1">
+                                <span class="api-endpoint mr-2">POST /query</span>
+                                <span class="text-xs px-2 py-1 bg-yellow-100 text-yellow-800 rounded">Auth Required</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Run a custom query against the dataset</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- API Key Management -->
+                <div>
+                    <h3 class="font-medium text-gray-700 mb-3">Your API Keys</h3>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium">Production Key</span>
+                            <div class="flex space-x-2">
+                                <button class="text-xs text-purple-600 hover:text-purple-700">Copy</button>
+                                <button class="text-xs text-red-600 hover:text-red-700">Revoke</button>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 p-2 rounded text-sm font-mono overflow-x-auto">
+                            xk5j9-8f7q2-3m4n6-1p0o9
+                        </div>
+                        <div class="text-xs text-gray-500 mt-1">Created: 15 Jun 2023 | Last used: 2 hours ago</div>
+                    </div>
+                    
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md w-full">
+                        Generate New API Key
+                    </button>
+                    
+                    <div class="mt-4 text-sm text-gray-600">
+                        <p><i class="fas fa-info-circle mr-2 text-purple-600"></i> Rate limit: 100 requests/minute</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription Management -->
+        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold text-gray-800">Subscription Management</h2>
+                <button class="text-sm text-gray-600 hover:text-gray-800 flex items-center">
+                    <i class="fas fa-file-invoice-dollar mr-1"></i> Invoice History
+                </button>
+            </div>
+            
+            <!-- Current Plan -->
+            <div class="bg-teal-50 border border-teal-100 rounded-lg p-4 mb-8">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-medium text-gray-800 mb-1">Your Current Plan</h3>
+                        <p class="text-teal-700 font-bold text-lg">Build Phase</p>
+                        <p class="text-sm text-gray-600">Renews on: 15 Sep 2023</p>
+                    </div>
+                    <button class="bg-white hover:bg-gray-50 text-teal-600 border border-teal-300 px-4 py-2 rounded-md">
+                        Upgrade Plan
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Plan Tiers -->
+            <h3 class="font-medium text-gray-700 mb-4">Available Plans</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <!-- Idea Phase -->
+                <div class="tier-card bg-white border border-gray-200 rounded-lg p-6">
+                    <h4 class="font-medium text-gray-800 mb-2">Idea Phase</h4>
+                    <p class="text-2xl font-bold text-gray-800 mb-4">$5,000<span class="text-sm font-normal text-gray-600">/year</span></p>
+                    
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Basic reporting templates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Single API key</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Up to 3 users</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Email support</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-md">
+                        Current Plan
+                    </button>
+                </div>
+                
+                <!-- Build Phase -->
+                <div class="tier-card popular bg-white border border-gray-200 rounded-lg p-6 relative">
+                    <div class="absolute top-0 right-0 bg-teal-600 text-white text-xs px-2 py-1 rounded-bl rounded-tr">POPULAR</div>
+                    <h4 class="font-medium text-gray-800 mb-2">Build Phase</h4>
+                    <p class="text-2xl font-bold text-gray-800 mb-4">$15,000<span class="text-sm font-normal text-gray-600">/year</span></p>
+                    
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Custom report templates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Advanced analytics exports</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Up to 10 users</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Priority support</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md">
+                        Upgrade Now
+                    </button>
+                </div>
+                
+                <!-- Scale Phase -->
+                <div class="tier-card bg-white border border-gray-200 rounded-lg p-6">
+                    <h4 class="font-medium text-gray-800 mb-2">Scale Phase</h4>
+                    <p class="text-2xl font-bold text-gray-800 mb-4">Custom<span class="text-sm font-normal text-gray-600">/year</span></p>
+                    
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Unlimited reports</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Dedicated API instances</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">Unlimited users</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-teal-500 mt-1 mr-2"></i>
+                            <span class="text-sm text-gray-700">24/7 support with SLA</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-md">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Payment Method -->
+            <h3 class="font-medium text-gray-700 mb-4">Payment Method</h3>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-10 h-6 bg-gray-200 rounded mr-3"></div>
+                    <div>
+                        <p class="text-sm font-medium">Visa •••• •••• •••• 4242</p>
+                        <p class="text-xs text-gray-500">Expires 04/2025</p>
+                    </div>
+                </div>
+                <button class="text-sm text-purple-600 hover:text-purple-700">
+                    Update Payment Method
+                </button>
+            </div>
+        </section>
+
+        <!-- Usage Metrics -->
+        <section class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-6">Usage & Impact</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Chart -->
+                <div>
+                    <h3 class="font-medium text-gray-700 mb-4">Monthly Report Exports</h3>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 h-64 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-chart-bar text-4xl text-gray-300 mb-2"></i>
+                            <p class="text-gray-500">Report export data visualization</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Top Organizations -->
+                <div>
+                    <h3 class="font-medium text-gray-700 mb-4">Top Organizations by API Calls</h3>
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-gray-200 rounded-full mr-3"></div>
+                                    <span class="text-sm font-medium">UNDP</span>
+                                </div>
+                                <span class="text-sm text-gray-600">1,243 calls</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-gray-200 rounded-full mr-3"></div>
+                                    <span class="text-sm font-medium">Sightsavers</span>
+                                </div>
+                                <span class="text-sm text-gray-600">987 calls</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-gray-200 rounded-full mr-3"></div>
+                                    <span class="text-sm font-medium">Mastercard Foundation</span>
+                                </div>
+                                <span class="text-sm text-gray-600">756 calls</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-gray-200 rounded-full mr-3"></div>
+                                    <span class="text-sm font-medium">Gov. of South Africa</span>
+                                </div>
+                                <span class="text-sm text-gray-600">532 calls</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-gray-200 rounded-full mr-3"></div>
+                                    <span class="text-sm font-medium">UNICEF</span>
+                                </div>
+                                <span class="text-sm text-gray-600">421 calls</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Feedback & Support -->
+        <section class="bg-white rounded-lg shadow-sm p-6">
+            <!-- Impact Callout -->
+            <div class="bg-gradient-to-r from-teal-500 to-teal-600 rounded-lg p-6 text-white">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-xl font-bold mb-2">Your Data in Action</h3>
+                        <p class="opacity-90">You've delivered data to <span class="font-bold">23 partners</span> this quarter, informing policies that reach <span class="font-bold">3.2 million</span> people with disabilities.</p>
+                    </div>
+                    <button class="bg-white text-teal-600 hover:bg-gray-100 px-6 py-2 rounded-md font-medium">
+                        View Impact Report
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-gray-600">© 2023 IncludAI DataHub. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Accessibility</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

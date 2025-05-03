@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User & Access Management | IncludAI DataHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Alegreya:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAIAAAAnuUURAAAGSklEQVR4nOyZfUwTZxzHn2uvtkBpealQBeLGQDtBx3yXFzNf/8B3RaeOGbNkL4kz6oyaZcn0D/1j2eaybGqmOI2yacw2h26Is1NwvgAWxei0bmLFUmih0hautKV37dpee73rXXu9UpOZ8E3T3D2/e+75PL9+73nueQq73W7wvxcMXgQNU8ZPw5Tx0zBl/BQHSlPfgOqu5r5a19VpMnSau3VmHurOzkwdnZmSNSpt7PjRRdNyxdIEMARBMY/qPWakuq7piuofjaabjwI+FvzA1FNPNH/cqMml+QvWTk0ZKQbcFQtltwU59Pu108oWp80JY4CHAtjl+/YB+Y9dvmNqNAGG56+ZWv5usTSDGys3SoMFOXjh2slLKtSGBjOHBRADmcMRmaNeVsGcdZPLN5WJ0xKjbJcHotYghu2rbai62Ohwot6eQf5yTzchCBB99R4HTqBANHCpt2TQ7lRWNZ797DI2iIHoFG0ue622t787eetfLWO2WH3JmOn8STnvn1iblMb+YEWVSyfmWnf4ZPNjrffEHciWL0N4tgCRS1+2iExDxPVElFRXc1NbVXkKc7pYAaKi3HGmtlmj9f9uviYhP4sfyO0GwaibEsWPKVEQjGqanp7ZXssKwE55pFH1/fWWEG+RcxkhWwyZhkCIp28ca7lRpQJDoTT0IzvPXgCkB4I9W4CSrQiZBoG6v338R78eATFT7lHWO1CUW7ai9iVRd9DmbPjyWoyUml7TUdVtVm9BbL50h2SaydPNR1T9XUgslHsuN2AuF9mFADB7i9N4yXg3pw29tKc+HEmkt40mbQcg9RgAfsGcNT+uyssIuW7QeO6L0xeLVnxeLhcy3AY16cw9nUZjW8etn++1tljcNF/izE8a2sORhB3V1UbjxK/30+diviB9+ZuV35Sk4AQ3f6jeebbd4vBGEyVZK7ZWbp4q8oWQ6weUzXaZokA+bkL2y6PxQmBpvHp8W/3dpxjDnVGw5e5GmUJGhwmbyxq1mtlbdkRrsRN56usxP/NMJPjUZzL3WtFAyG64p1aqHPXe5vk5i5Z9srdwJADSGaUfHIIPVCrVeozu2gc16jJFKR0mrC8bfT83COMtQvSnGFCjPhdiupq6qlNGvFBQMGXxajk+LYZ42tBqAEwKS6lHkGC7tPESBJlDRwCySE+x9VHto05/MZy7pFAu8V0OUbrdr+8HnCnDj3kgyBw6XpJFruvUdXT2BAKvyLMz+PS6iMEKOFEaEGuEuZgQ3VtkkaPOfsTYFwiIROkSmD4zIV0ccymE+US79BGOgkL1FlkUTzvsTgcRgWFh8G7BuiG3ZqWUi8UBqki+BDRvUTpAvl4IC4jh1I6iDoa64swkwJkyrr4EQlGQ0oHo+1B6XbE8mREGjkQZfi4mRPcWoEaJbAmSxTKJv9zZ9qSjm2G8FMs55rJILifaHfJ46SnmSxV5Y/yUqPbCI73vSQrx9KgiOeBEufRVRbDdoY+Xydnz1ivwWRW03aurMeJzVIgvFUsVTCzhf3GFTDZ2pKxNb4zelyNSU9KSiBuKMgvzZiShPAyI0rJLK2ZMU3hDA/dbj2+ra9VhfJqnZWPTGSdxACKuIbfV1h34q4m0SuRPLK44uiwvJ5HSN4dJf+7gL1fCvhPhQq06fcsx5U/V7VYbdc0ZWGHO/qhkwd55nCmfmMxF+/ZjDpRHXtpSdy8oJbRtAuKth7VuggDe+XBLUgbHp8ejl1JTPiyZzuhLKMw7IsCdSjqOsm7xxunhEAHrumf7G2VSkeh5r3uEycLZO8oiYLBQSkXCr5aXR7l2AYB53cO6Zqr4drFQIoyd0qPVr0/YPLvk+a3H524tfW1lQWSGqPY2di2cOzN3jP8kruvx8fPzyj+dwwoQFSUPgo69syorVYq3HC9fpmZJ1x+ugHhQfCg9komTmnZvWj9rCojTerzkrUm7mzYlRLQjIc57wScaVLuqz4NBV8zjJeyGNuxdVLp2UvSNxrJj/Vj/rOr89ZqGOy4Hxmn/cgTEn7Vk4sL3SuS56ZxajH33X9/bd7jm6q9/3kYHUNZ99USBYMHKyQs3zEyTSwB3QUP/5/nOww7l1b8fqHVWi23AYvd8PFiSBJHU8xEnFE7IKZ47Pr8wCwxB0PD/43HTMGX8NEwZP70YlP8BAAD//5avnHMAAAAGSURBVAMAG5cFcZNToGoAAAAASUVORK5CYII=" type="image/png">
+    <style>
+        body {
+            font-family: 'Alegreya', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Custom styles for accessibility */
+        [role="button"]:focus, button:focus, a:focus, input:focus, select:focus {
+            outline: 2px solid #0d9488;
+            outline-offset: 2px;
+        }
+        
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .status-badge.active {
+            background-color: #f0fdf4;
+            color: #16a34a;
+        }
+        
+        .status-badge.invited {
+            background-color: #eff6ff;
+            color: #2563eb;
+        }
+        
+        .status-badge.suspended {
+            background-color: #fef2f2;
+            color: #dc2626;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Animation for modal */
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .modal-animation {
+            animation: modalFadeIn 0.2s ease-out forwards;
+        }
+        
+        /* Responsive table */
+        @media (max-width: 768px) {
+            .responsive-table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl mr-2">ID</div>
+                    <span class="text-xl font-bold text-gray-800">IncludAI DataHub</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100" aria-label="Notifications">
+                        <i class="fas fa-bell text-gray-600"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mr-2">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="text-sm font-medium">Admin</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-full hover:bg-gray-100" aria-label="Mobile Menu">
+                    <i class="fas fa-bars text-gray-600 text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex mt-4 flex space-x-6 border-b">
+                <a href="/home/dashboard.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Dashboard</a>
+                <a href="/home/data-collection.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Data Collection</a>
+                <a href="/home/analytics.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Analytics</a>
+                <a href="/home/co-design.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Co-Design & Feedback Portal</a>
+                <a href="/home/reporting.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Reporting & DaaS</a>
+                <a href="/home/resources.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Resources</a>
+                <a href="#" class="pb-3 px-1 text-teal-600 border-b-2 border-teal-600 font-medium">Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-6">
+        <!-- Breadcrumbs -->
+        <div class="flex items-center text-sm text-gray-600 mb-6">
+            <a href="/home/dashboard.html" class="hover:text-teal-600">Dashboard</a>
+            <i class="fas fa-chevron-right mx-2 text-xs"></i>
+            <a href="#" class="hover:text-teal-600">Settings</a>
+            <i class="fas fa-chevron-right mx-2 text-xs"></i>
+            <span class="font-medium text-teal-600">User & Access Management</span>
+        </div>
+
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">User & Access Management</h1>
+                <p class="text-gray-600">Secure by design, simple to manage. Control who can access and modify sensitive disability data.</p>
+            </div>
+            <div class="mt-4 md:mt-0 flex space-x-3">
+                <button id="inviteUserBtn" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md flex items-center">
+                    <i class="fas fa-user-plus mr-2"></i> Invite User
+                </button>
+                <button class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-md flex items-center">
+                    <i class="fas fa-scroll mr-2"></i> View Audit Logs
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="border-b border-gray-200 mb-6">
+            <nav class="-mb-px flex space-x-8">
+                <a href="#" class="border-teal-500 text-teal-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">User Directory</a>
+                <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">Roles & Permissions</a>
+                <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">Two-Factor Auth</a>
+                <a href="#" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">Compliance</a>
+            </nav>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="relative flex-grow max-w-md">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-400"></i>
+                    </div>
+                    <input type="text" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 sm:text-sm" placeholder="Search users...">
+                </div>
+                <div class="flex space-x-3">
+                    <select class="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 sm:text-sm rounded-md">
+                        <option>All Roles</option>
+                        <option>Admin</option>
+                        <option>Data Collector</option>
+                        <option>Analyst</option>
+                        <option>Guest</option>
+                    </select>
+                    <select class="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 sm:text-sm rounded-md">
+                        <option>All Statuses</option>
+                        <option>Active</option>
+                        <option>Invited</option>
+                        <option>Suspended</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Directory Table -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
+            <div class="responsive-table">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Login</th>
+                            <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- User 1 -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Alex Johnson</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">alex.johnson@example.com</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">Admin</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="status-badge active">
+                                    <i class="fas fa-circle text-[0.5rem] mr-1"></i> Active
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 hours ago</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-teal-600 hover:text-teal-900" aria-label="Edit role">
+                                        <i class="fas fa-user-edit"></i>
+                                    </button>
+                                    <button class="text-gray-600 hover:text-gray-900" aria-label="Reset password">
+                                        <i class="fas fa-key"></i>
+                                    </button>
+                                    <button class="text-purple-600 hover:text-purple-900" aria-label="Suspend user">
+                                        <i class="fas fa-user-slash"></i>
+                                    </button>
+                                    <button class="text-red-600 hover:text-red-900" aria-label="Remove user">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 2 -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Sam Wilson</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">sam.wilson@example.com</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Data Collector</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="status-badge active">
+                                    <i class="fas fa-circle text-[0.5rem] mr-1"></i> Active
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Yesterday</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-teal-600 hover:text-teal-900" aria-label="Edit role">
+                                        <i class="fas fa-user-edit"></i>
+                                    </button>
+                                    <button class="text-gray-600 hover:text-gray-900" aria-label="Reset password">
+                                        <i class="fas fa-key"></i>
+                                    </button>
+                                    <button class="text-purple-600 hover:text-purple-900" aria-label="Suspend user">
+                                        <i class="fas fa-user-slash"></i>
+                                    </button>
+                                    <button class="text-red-600 hover:text-red-900" aria-label="Remove user">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 3 -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Taylor Smith</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">taylor.smith@example.com</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Analyst</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="status-badge invited">
+                                    <i class="fas fa-circle text-[0.5rem] mr-1"></i> Invited
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-teal-600 hover:text-teal-900" aria-label="Edit role">
+                                        <i class="fas fa-user-edit"></i>
+                                    </button>
+                                    <button class="text-gray-600 hover:text-gray-900" aria-label="Reset password">
+                                        <i class="fas fa-key"></i>
+                                    </button>
+                                    <button class="text-purple-600 hover:text-purple-900" aria-label="Suspend user">
+                                        <i class="fas fa-user-slash"></i>
+                                    </button>
+                                    <button class="text-red-600 hover:text-red-900" aria-label="Remove user">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 4 -->
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Jordan Lee</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">jordan.lee@example.com</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Guest</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="status-badge suspended">
+                                    <i class="fas fa-circle text-[0.5rem] mr-1"></i> Suspended
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 week ago</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-teal-600 hover:text-teal-900" aria-label="Edit role">
+                                        <i class="fas fa-user-edit"></i>
+                                    </button>
+                                    <button class="text-gray-600 hover:text-gray-900" aria-label="Reset password">
+                                        <i class="fas fa-key"></i>
+                                    </button>
+                                    <button class="text-purple-600 hover:text-purple-900" aria-label="Reactivate user">
+                                        <i class="fas fa-user-check"></i>
+                                    </button>
+                                    <button class="text-red-600 hover:text-red-900" aria-label="Remove user">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="bg-gray-50 px-6 py-3 flex items-center justify-between border-t border-gray-200">
+                <div class="flex-1 flex justify-between sm:hidden">
+                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Previous</a>
+                    <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Next</a>
+                </div>
+                <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                    <div>
+                        <p class="text-sm text-gray-700">
+                            Showing <span class="font-medium">1</span> to <span class="font-medium">4</span> of <span class="font-medium">12</span> users
+                        </p>
+                    </div>
+                    <div>
+                        <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <span class="sr-only">Previous</span>
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                            <a href="#" aria-current="page" class="z-10 bg-teal-50 border-teal-500 text-teal-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">1</a>
+                            <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">2</a>
+                            <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">3</a>
+                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <span class="sr-only">Next</span>
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roles & Permissions Section -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-lg font-medium text-gray-900">Roles & Permissions</h2>
+                    <button id="createRoleBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                        <i class="fas fa-plus mr-2"></i> Create Custom Role
+                    </button>
+                </div>
+            </div>
+            <div class="divide-y divide-gray-200">
+                <!-- Admin Role -->
+                <div class="px-6 py-4">
+                    <button class="w-full flex justify-between items-center text-left focus:outline-none" aria-expanded="false" aria-controls="admin-permissions">
+                        <div>
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">Admin</span>
+                            <p class="mt-1 text-sm text-gray-500">Full access to all modules and settings</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="admin-permissions" class="hidden mt-4 pl-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="admin-permission-1" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="admin-permission-1" class="font-medium text-gray-700">Full system access</label>
+                                    <p class="text-gray-500">Can access all features and settings</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="admin-permission-2" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="admin-permission-2" class="font-medium text-gray-700">Manage users</label>
+                                    <p class="text-gray-500">Can invite, edit, and remove users</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="admin-permission-3" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="admin-permission-3" class="font-medium text-gray-700">Configure system</label>
+                                    <p class="text-gray-500">Can change system-wide settings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Collector Role -->
+                <div class="px-6 py-4">
+                    <button class="w-full flex justify-between items-center text-left focus:outline-none" aria-expanded="false" aria-controls="collector-permissions">
+                        <div>
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Data Collector</span>
+                            <p class="mt-1 text-sm text-gray-500">Can create and submit surveys</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="collector-permissions" class="hidden mt-4 pl-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="collector-permission-1" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="collector-permission-1" class="font-medium text-gray-700">Create surveys</label>
+                                    <p class="text-gray-500">Can create new survey forms</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="collector-permission-2" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="collector-permission-2" class="font-medium text-gray-700">Submit data</label>
+                                    <p class="text-gray-500">Can submit completed surveys</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="collector-permission-3" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="collector-permission-3" class="font-medium text-gray-700">View own submissions</label>
+                                    <p class="text-gray-500">Can view their submitted data</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analyst Role -->
+                <div class="px-6 py-4">
+                    <button class="w-full flex justify-between items-center text-left focus:outline-none" aria-expanded="false" aria-controls="analyst-permissions">
+                        <div>
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Analyst</span>
+                            <p class="mt-1 text-sm text-gray-500">Can view dashboards and generate reports</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="analyst-permissions" class="hidden mt-4 pl-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="analyst-permission-1" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="analyst-permission-1" class="font-medium text-gray-700">View dashboards</label>
+                                    <p class="text-gray-500">Can access all analytics dashboards</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="analyst-permission-2" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="analyst-permission-2" class="font-medium text-gray-700">Generate reports</label>
+                                    <p class="text-gray-500">Can create and export reports</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="analyst-permission-3" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="analyst-permission-3" class="font-medium text-gray-700">Filter data</label>
+                                    <p class="text-gray-500">Can apply filters to data views</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guest Role -->
+                <div class="px-6 py-4">
+                    <button class="w-full flex justify-between items-center text-left focus:outline-none" aria-expanded="false" aria-controls="guest-permissions">
+                        <div>
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Guest</span>
+                            <p class="mt-1 text-sm text-gray-500">Read-only access to published reports</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-gray-400 transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="guest-permissions" class="hidden mt-4 pl-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="guest-permission-1" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="guest-permission-1" class="font-medium text-gray-700">View reports</label>
+                                    <p class="text-gray-500">Can view published reports</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="guest-permission-2" type="checkbox" checked disabled class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="guest-permission-2" class="font-medium text-gray-700">Download reports</label>
+                                    <p class="text-gray-500">Can download PDF versions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two-Factor Authentication Section -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h2 class="text-lg font-medium text-gray-900">Two-Factor Authentication</h2>
+            </div>
+            <div class="px-6 py-4">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-base font-medium text-gray-900">Require 2FA for all users</h3>
+                        <p class="mt-1 text-sm text-gray-600">Enhance security by requiring all users to set up two-factor authentication.</p>
+                    </div>
+                    <div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" class="sr-only peer">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-teal-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
+                            <span class="ml-3 text-sm font-medium text-gray-900">Enabled</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-900">2FA Status: <span class="text-teal-600">Enabled for 3 of 4 users</span></p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                                <div class="bg-teal-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <button class="mt-4 md:mt-0 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+                            <i class="fas fa-envelope mr-2"></i> Send 2FA Setup Email
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audit Logs Section -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-lg font-medium text-gray-900">Audit Logs</h2>
+                    <button class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-md text-sm font-medium">
+                        <i class="fas fa-file-export mr-2"></i> Export Logs (CSV)
+                    </button>
+                </div>
+            </div>
+            <div class="px-6 py-4">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+                    <div class="flex space-x-3">
+                        <select class="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 sm:text-sm rounded-md">
+                            <option>All Users</option>
+                            <option>Alex Johnson</option>
+                            <option>Sam Wilson</option>
+                            <option>Taylor Smith</option>
+                            <option>Jordan Lee</option>
+                        </select>
+                        <select class="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 sm:text-sm rounded-md">
+                            <option>All Actions</option>
+                            <option>User Management</option>
+                            <option>Data Submission</option>
+                            <option>Report Generation</option>
+                            <option>System Configuration</option>
+                        </select>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-calendar text-gray-400"></i>
+                        </div>
+                        <input type="text" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 sm:text-sm" placeholder="Date range">
+                    </div>
+                </div>
+                <div class="responsive-table">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date & Time</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IP Address</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2023-06-15 14:32:45</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Alex Johnson</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Invited user: taylor.smith@example.com</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">192.168.1.42</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2023-06-15 11:15:22</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Sam Wilson</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Submitted survey: Workplace Accessibility 2023</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">203.45.67.12</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2023-06-14 09:45:18</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Alex Johnson</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Changed role for Jordan Lee from Analyst to Guest</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">192.168.1.42</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2023-06-13 16:20:33</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Jordan Lee</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Generated report: Disability Employment Trends Q2 2023</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">210.187.34.56</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4 flex justify-end">
+                    <button class="bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-md text-sm font-medium">
+                        <i class="fas fa-history mr-2"></i> Load More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-gray-600">© 2023 IncludAI DataHub. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Accessibility</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Invite User Modal -->
+    <div id="inviteUserModal" class="hidden fixed inset-0 overflow-y-auto z-50">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full modal-animation">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-teal-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <i class="fas fa-user-plus text-teal-600"></i>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Invite New User</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500">Enter the email address of the person you want to invite and assign them a role.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="invite-email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input type="email" id="invite-email" class="mt-1 focus:ring-teal-500 focus:border-teal-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                            <div>
+                                <label for="invite-role" class="block text-sm font-medium text-gray-700">Role</label>
+                                <select id="invite-role" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm rounded-md">
+                                    <option>Select a role</option>
+                                    <option>Admin</option>
+                                    <option>Data Collector</option>
+                                    <option>Analyst</option>
+                                    <option>Guest</option>
+                                </select>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="invite-2fa" type="checkbox" class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="invite-2fa" class="font-medium text-gray-700">Require 2FA setup</label>
+                                    <p class="text-gray-500">User will be required to set up two-factor authentication.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-teal-600 text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Send Invitation
+                    </button>
+                    <button id="cancelInviteBtn" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Role Modal -->
+    <div id="createRoleModal" class="hidden fixed inset-0 overflow-y-auto z-50">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full modal-animation">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-purple-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <i class="fas fa-user-tag text-purple-600"></i>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Create Custom Role</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500">Define a new role with specific permissions for your organization's needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="role-name" class="block text-sm font-medium text-gray-700">Role Name</label>
+                                <input type="text" id="role-name" class="mt-1 focus:ring-purple-500 focus:border-purple-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="e.g. 'Regional Manager'">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Permissions</label>
+                                <p class="text-sm text-gray-500 mb-2">Select the permissions this role should have:</p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="permission-1" type="checkbox" class="focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="permission-1" class="font-medium text-gray-700">View dashboards</label>
+                                            <p class="text-gray-500">Can access analytics dashboards</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="permission-2" type="checkbox" class="focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="permission-2" class="font-medium text-gray-700">Create reports</label>
+                                            <p class="text-gray-500">Can generate and export reports</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="permission-3" type="checkbox" class="focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="permission-3" class="font-medium text-gray-700">Manage surveys</label>
+                                            <p class="text-gray-500">Can create and edit survey forms</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="permission-4" type="checkbox" class="focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="permission-4" class="font-medium text-gray-700">Submit data</label>
+                                            <p class="text-gray-500">Can submit completed surveys</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="permission-5" type="checkbox" class="focus:ring-purple-500 h-4 w-4 text-purple-600 border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="permission-5" class="font-medium text-gray-700">Manage users</label>
+                                            <p class="text-gray-500">Can invite and edit users (limited to same role)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-purple-600 text-base font-medium text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Create Role
+                    </button>
+                    <button id="cancelRoleBtn" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle modals
+        document.getElementById('inviteUserBtn').addEventListener('click', function() {
+            document.getElementById('inviteUserModal').classList.remove('hidden');
+        });
+
+        document.getElementById('cancelInviteBtn').addEventListener('click', function() {
+            document.getElementById('inviteUserModal').classList.add('hidden');
+        });
+
+        document.getElementById('createRoleBtn').addEventListener('click', function() {
+            document.getElementById('createRoleModal').classList.remove('hidden');
+        });
+
+        document.getElementById('cancelRoleBtn').addEventListener('click', function() {
+            document.getElementById('createRoleModal').classList.add('hidden');
+        });
+
+        // Toggle permission sections
+        document.querySelectorAll('[aria-expanded]').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetId = this.getAttribute('aria-controls');
+                const target = document.getElementById(targetId);
+                const icon = this.querySelector('i');
+                
+                if (target.classList.contains('hidden')) {
+                    target.classList.remove('hidden');
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                    this.setAttribute('aria-expanded', 'true');
+                } else {
+                    target.classList.add('hidden');
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                    this.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('inviteUserModal')) {
+                document.getElementById('inviteUserModal').classList.add('hidden');
+            }
+            if (event.target === document.getElementById('createRoleModal')) {
+                document.getElementById('createRoleModal').classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

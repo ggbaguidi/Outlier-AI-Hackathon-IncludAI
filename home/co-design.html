@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-Design & Feedback Portal | IncludAI DataHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Alegreya:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAIAAAAnuUURAAAGSklEQVR4nOyZfUwTZxzHn2uvtkBpealQBeLGQDtBx3yXFzNf/8B3RaeOGbNkL4kz6oyaZcn0D/1j2eaybGqmOI2yacw2h26Is1NwvgAWxei0bmLFUmih0hautKV37dpee73rXXu9UpOZ8E3T3D2/e+75PL9+73nueQq73W7wvxcMXgQNU8ZPw5Tx0zBl/BQHSlPfgOqu5r5a19VpMnSau3VmHurOzkwdnZmSNSpt7PjRRdNyxdIEMARBMY/qPWakuq7piuofjaabjwI+FvzA1FNPNH/cqMml+QvWTk0ZKQbcFQtltwU59Pu108oWp80JY4CHAtjl+/YB+Y9dvmNqNAGG56+ZWv5usTSDGys3SoMFOXjh2slLKtSGBjOHBRADmcMRmaNeVsGcdZPLN5WJ0xKjbJcHotYghu2rbai62Ohwot6eQf5yTzchCBB99R4HTqBANHCpt2TQ7lRWNZ797DI2iIHoFG0ue622t787eetfLWO2WH3JmOn8STnvn1iblMb+YEWVSyfmWnf4ZPNjrffEHciWL0N4tgCRS1+2iExDxPVElFRXc1NbVXkKc7pYAaKi3HGmtlmj9f9uviYhP4sfyO0GwaibEsWPKVEQjGqanp7ZXssKwE55pFH1/fWWEG+RcxkhWwyZhkCIp28ca7lRpQJDoTT0IzvPXgCkB4I9W4CSrQiZBoG6v338R78eATFT7lHWO1CUW7ai9iVRd9DmbPjyWoyUml7TUdVtVm9BbL50h2SaydPNR1T9XUgslHsuN2AuF9mFADB7i9N4yXg3pw29tKc+HEmkt40mbQcg9RgAfsGcNT+uyssIuW7QeO6L0xeLVnxeLhcy3AY16cw9nUZjW8etn++1tljcNF/izE8a2sORhB3V1UbjxK/30+diviB9+ZuV35Sk4AQ3f6jeebbd4vBGEyVZK7ZWbp4q8oWQ6weUzXaZokA+bkL2y6PxQmBpvHp8W/3dpxjDnVGw5e5GmUJGhwmbyxq1mtlbdkRrsRN56usxP/NMJPjUZzL3WtFAyG64p1aqHPXe5vk5i5Z9srdwJADSGaUfHIIPVCrVeozu2gc16jJFKR0mrC8bfT83COMtQvSnGFCjPhdiupq6qlNGvFBQMGXxajk+LYZ42tBqAEwKS6lHkGC7tPESBJlDRwCySE+x9VHto05/MZy7pFAu8V0OUbrdr+8HnCnDj3kgyBw6XpJFruvUdXT2BAKvyLMz+PS6iMEKOFEaEGuEuZgQ3VtkkaPOfsTYFwiIROkSmD4zIV0ccymE+US79BGOgkL1FlkUTzvsTgcRgWFh8G7BuiG3ZqWUi8UBqki+BDRvUTpAvl4IC4jh1I6iDoa64swkwJkyrr4EQlGQ0oHo+1B6XbE8mREGjkQZfi4mRPcWoEaJbAmSxTKJv9zZ9qSjm2G8FMs55rJILifaHfJ46SnmSxV5Y/yUqPbCI73vSQrx9KgiOeBEufRVRbDdoY+Xydnz1ivwWRW03aurMeJzVIgvFUsVTCzhf3GFTDZ2pKxNb4zelyNSU9KSiBuKMgvzZiShPAyI0rJLK2ZMU3hDA/dbj2+ra9VhfJqnZWPTGSdxACKuIbfV1h34q4m0SuRPLK44uiwvJ5HSN4dJf+7gL1fCvhPhQq06fcsx5U/V7VYbdc0ZWGHO/qhkwd55nCmfmMxF+/ZjDpRHXtpSdy8oJbRtAuKth7VuggDe+XBLUgbHp8ejl1JTPiyZzuhLKMw7IsCdSjqOsm7xxunhEAHrumf7G2VSkeh5r3uEycLZO8oiYLBQSkXCr5aXR7l2AYB53cO6Zqr4drFQIoyd0qPVr0/YPLvk+a3H524tfW1lQWSGqPY2di2cOzN3jP8kruvx8fPzyj+dwwoQFSUPgo69syorVYq3HC9fpmZJ1x+ugHhQfCg9komTmnZvWj9rCojTerzkrUm7mzYlRLQjIc57wScaVLuqz4NBV8zjJeyGNuxdVLp2UvSNxrJj/Vj/rOr89ZqGOy4Hxmn/cgTEn7Vk4sL3SuS56ZxajH33X9/bd7jm6q9/3kYHUNZ99USBYMHKyQs3zEyTSwB3QUP/5/nOww7l1b8fqHVWi23AYvd8PFiSBJHU8xEnFE7IKZ47Pr8wCwxB0PD/43HTMGX8NEwZP70YlP8BAAD//5avnHMAAAAGSURBVAMAG5cFcZNToGoAAAAASUVORK5CYII=" type="image/png">
+    <style>
+        body {
+            font-family: 'Alegreya', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .feedback-card {
+            transition: all 0.3s ease;
+        }
+        .feedback-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #e5e7eb;
+        }
+        .tag-selector input:checked + label {
+            background-color: #0d9488;
+            color: white;
+        }
+        [role="tab"]:focus {
+            outline: 2px solid #0d9488;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/home/index.html" class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl mr-2">ID</div>
+                    <span class="text-xl font-bold text-gray-800">IncludAI DataHub</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100">
+                        <i class="fas fa-bell text-gray-600"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mr-2">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="text-sm font-medium">Admin</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-full hover:bg-gray-100" aria-label="Mobile Menu">
+                    <i class="fas fa-bars text-gray-600 text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex mt-4 flex space-x-6 border-b">
+                <a href="/home/dashboard.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Dashboard</a>
+                <a href="/home/data-collection.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Data Collection</a>
+                <a href="/home/analytics.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Analytics</a>
+                <a href="#" class="pb-3 px-1 text-teal-600 border-b-2 border-teal-600 font-medium">Co-Design & Feedback Portal</a>
+                <a href="/home/reporting.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Reporting & DaaS</a>
+                <a href="/home/resources.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Resources</a>
+                <a href="/home/user-managements.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Breadcrumbs -->
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+            <a href="/home/dashboard.html" class="hover:text-teal-600">Dashboard</a>
+            <i class="fas fa-chevron-right mx-2 text-xs"></i>
+            <span class="font-medium text-teal-600">Co-Design</span>
+        </div>
+
+        <!-- Page Header -->
+        <div class="bg-gradient-to-r from-teal-50 to-purple-50 rounded-lg p-6 mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Co-Design & Feedback Portal</h1>
+            <p class="text-gray-600 max-w-3xl">Help us improve IncludAI DataHub—your feedback drives inclusion. Share suggestions, validate findings, and collaborate with our community to create better solutions for everyone.</p>
+        </div>
+
+        <!-- Feedback Tabs -->
+        <div class="mb-8">
+            <div role="tablist" class="flex border-b border-gray-200">
+                <button role="tab" aria-selected="true" aria-controls="suggestions-panel" id="suggestions-tab" class="px-4 py-2 font-medium text-teal-600 border-b-2 border-teal-600 focus:outline-none">
+                    <i class="fas fa-lightbulb mr-2"></i>Make a Suggestion
+                </button>
+                <button role="tab" aria-selected="false" aria-controls="validation-panel" id="validation-tab" class="px-4 py-2 font-medium text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <i class="fas fa-check-circle mr-2"></i>Validate Findings
+                </button>
+                <button role="tab" aria-selected="false" aria-controls="timeline-panel" id="timeline-tab" class="px-4 py-2 font-medium text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <i class="fas fa-history mr-2"></i>Feedback Timeline
+                </button>
+            </div>
+
+            <!-- Suggestions Panel -->
+            <div id="suggestions-panel" role="tabpanel" aria-labelledby="suggestions-tab" class="bg-white rounded-b-lg shadow-sm p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">New Suggestion Form</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label for="suggestion-title" class="block text-sm font-medium text-gray-700 mb-1">Suggestion Title*</label>
+                        <input type="text" id="suggestion-title" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="Briefly describe your suggestion" required>
+                    </div>
+
+                    <div>
+                        <label for="suggestion-description" class="block text-sm font-medium text-gray-700 mb-1">Description*</label>
+                        <textarea id="suggestion-description" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500" placeholder="Provide detailed information about your suggestion..." required></textarea>
+                    </div>
+
+                    <div>
+                        <label for="related-module" class="block text-sm font-medium text-gray-700 mb-1">Related Module*</label>
+                        <select id="related-module" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500" required>
+                            <option value="">Select a module</option>
+                            <option value="data-collection">Data Collection</option>
+                            <option value="analytics">Analytics</option>
+                            <option value="visualization">Visualization</option>
+                            <option value="accessibility">Accessibility</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Tags (Select all that apply)</label>
+                        <div class="flex flex-wrap gap-2">
+                            <div class="tag-selector">
+                                <input type="checkbox" id="tag-data-field" name="tags" value="data-field" class="hidden">
+                                <label for="tag-data-field" class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm cursor-pointer hover:bg-gray-200 transition">Data Field</label>
+                            </div>
+                            <div class="tag-selector">
+                                <input type="checkbox" id="tag-visualization" name="tags" value="visualization" class="hidden">
+                                <label for="tag-visualization" class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm cursor-pointer hover:bg-gray-200 transition">Visualization</label>
+                            </div>
+                            <div class="tag-selector">
+                                <input type="checkbox" id="tag-accessibility" name="tags" value="accessibility" class="hidden">
+                                <label for="tag-accessibility" class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm cursor-pointer hover:bg-gray-200 transition">Accessibility</label>
+                            </div>
+                            <div class="tag-selector">
+                                <input type="checkbox" id="tag-ui" name="tags" value="ui" class="hidden">
+                                <label for="tag-ui" class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm cursor-pointer hover:bg-gray-200 transition">User Interface</label>
+                            </div>
+                            <div class="tag-selector">
+                                <input type="checkbox" id="tag-feature" name="tags" value="feature" class="hidden">
+                                <label for="tag-feature" class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm cursor-pointer hover:bg-gray-200 transition">New Feature</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="file-upload" class="block text-sm font-medium text-gray-700 mb-1">Attachments</label>
+                        <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                            <div class="space-y-1 text-center">
+                                <div class="flex text-sm text-gray-600">
+                                    <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-teal-600 hover:text-teal-500 focus-within:outline-none">
+                                        <span>Upload a file</span>
+                                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                    </label>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs text-gray-500">PNG, JPG, PDF up to 10MB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <button type="submit" class="px-4 py-2 bg-teal-600 text-white font-medium rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                            <i class="fas fa-paper-plane mr-2"></i>Submit Suggestion
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Validation Panel (Hidden by default) -->
+            <div id="validation-panel" role="tabpanel" aria-labelledby="validation-tab" class="hidden bg-white rounded-b-lg shadow-sm p-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-6">Validation Requests</h2>
+                
+                <div class="space-y-4">
+                    <!-- Validation Card 1 -->
+                    <div class="feedback-card bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-medium text-gray-800">Survey Field: "Mobility Assistance Needs"</h3>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Requires Validation</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Please validate whether this field accurately captures the range of mobility assistance needs reported by respondents.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-xs text-gray-500">
+                                <i class="fas fa-clock mr-1"></i> Posted 2 days ago
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md hover:bg-green-200 focus:outline-none">
+                                    <i class="fas fa-check mr-1"></i>Approve
+                                </button>
+                                <button class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-md hover:bg-yellow-200 focus:outline-none">
+                                    <i class="fas fa-question mr-1"></i>Request Clarification
+                                </button>
+                                <button class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-md hover:bg-red-200 focus:outline-none">
+                                    <i class="fas fa-times mr-1"></i>Reject
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Validation Card 2 -->
+                    <div class="feedback-card bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-medium text-gray-800">AI Insight: "Under-served Rural Areas"</h3>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Requires Validation</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3">Review the AI-generated insight about under-served rural areas and confirm whether it aligns with your organization's experience.</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-xs text-gray-500">
+                                <i class="fas fa-clock mr-1"></i> Posted 1 week ago
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-md hover:bg-green-200 focus:outline-none">
+                                    <i class="fas fa-check mr-1"></i>Approve
+                                </button>
+                                <button class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-md hover:bg-yellow-200 focus:outline-none">
+                                    <i class="fas fa-question mr-1"></i>Request Clarification
+                                </button>
+                                <button class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-md hover:bg-red-200 focus:outline-none">
+                                    <i class="fas fa-times mr-1"></i>Reject
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Panel (Hidden by default) -->
+            <div id="timeline-panel" role="tabpanel" aria-labelledby="timeline-tab" class="hidden bg-white rounded-b-lg shadow-sm p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-semibold text-gray-800">Feedback Timeline</h2>
+                    <div class="flex space-x-2">
+                        <select class="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                            <option>All Types</option>
+                            <option>Suggestions</option>
+                            <option>Validations</option>
+                        </select>
+                        <select class="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500">
+                            <option>All Statuses</option>
+                            <option>Open</option>
+                            <option>In Review</option>
+                            <option>Closed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Timeline Item -->
+                    <div class="relative pl-8 timeline-item">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-teal-500 border-4 border-white -ml-2"></div>
+                        <div class="feedback-card bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-medium text-gray-800">New Data Field Suggestion: "Assistive Technology Usage"</h3>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Implemented</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Suggested adding a field to track types and frequency of assistive technology usage among respondents.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-xs mr-2">
+                                        JD
+                                    </div>
+                                    <span class="text-xs text-gray-600">Jane Doe (Disability Advocate)</span>
+                                </div>
+                                <div class="text-xs text-gray-500">
+                                    <i class="fas fa-clock mr-1"></i> 2 weeks ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item -->
+                    <div class="relative pl-8 timeline-item">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-white -ml-2"></div>
+                        <div class="feedback-card bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-medium text-gray-800">Validation: "Urban Bias in Survey Responses"</h3>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">In Review</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">AI detected potential urban bias in survey responses. Validated by 3 organizations as accurate.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 text-xs mr-2">
+                                        AI
+                                    </div>
+                                    <span class="text-xs text-gray-600">IncludAI System</span>
+                                </div>
+                                <div class="text-xs text-gray-500">
+                                    <i class="fas fa-clock mr-1"></i> 1 month ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item -->
+                    <div class="relative pl-8 timeline-item">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-teal-500 border-4 border-white -ml-2"></div>
+                        <div class="feedback-card bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-medium text-gray-800">Accessibility Improvement: Screen Reader Compatibility</h3>
+                                <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Planned</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">Suggested improvements for better screen reader compatibility in data visualization modules.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 text-xs mr-2">
+                                        BS
+                                    </div>
+                                    <span class="text-xs text-gray-600">Bob Smith (Accessibility Expert)</span>
+                                </div>
+                                <div class="text-xs text-gray-500">
+                                    <i class="fas fa-clock mr-1"></i> 3 months ago
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-center">
+                    <button class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-teal-500">
+                        Load More
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contributor Directory -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold text-gray-800">Contributor Directory</h2>
+                <button class="px-4 py-2 bg-teal-600 text-white text-sm font-medium rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                    <i class="fas fa-user-plus mr-2"></i>Invite Collaborator
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Contributor Card 1 -->
+                <div class="feedback-card bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-lg mr-3">
+                            JD
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Jane Doe</h3>
+                            <p class="text-xs text-gray-500">Disability Advocate</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-xs text-gray-600 mb-3">
+                        <i class="fas fa-building mr-1"></i> National Disability Council
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="text-xs">
+                            <span class="font-medium">12</span> contributions
+                        </div>
+                        <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Top Validator</span>
+                    </div>
+                </div>
+
+                <!-- Contributor Card 2 -->
+                <div class="feedback-card bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 text-lg mr-3">
+                            BS
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Bob Smith</h3>
+                            <p class="text-xs text-gray-500">Accessibility Expert</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-xs text-gray-600 mb-3">
+                        <i class="fas fa-building mr-1"></i> Access for All
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="text-xs">
+                            <span class="font-medium">8</span> contributions
+                        </div>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">UI Specialist</span>
+                    </div>
+                </div>
+
+                <!-- Contributor Card 3 -->
+                <div class="feedback-card bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 text-lg mr-3">
+                            MJ
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-800">Maria Johnson</h3>
+                            <p class="text-xs text-gray-500">NGO Director</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-xs text-gray-600 mb-3">
+                        <i class="fas fa-building mr-1"></i> Inclusion International
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="text-xs">
+                            <span class="font-medium">15</span> contributions
+                        </div>
+                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Data Expert</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 text-center">
+                <a href="#" class="text-sm text-teal-600 hover:text-teal-700 font-medium">
+                    View All Contributors <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Co-Creation Workshops -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-6">Upcoming Co-Creation Workshops</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Workshop Card 1 -->
+                <div class="feedback-card bg-gradient-to-br from-teal-50 to-purple-50 border border-gray-200 rounded-lg p-5 shadow-sm">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-medium text-gray-800">Data Visualization Accessibility</h3>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Open to All</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Collaborate on making our data visualizations more accessible for users with various disabilities.</p>
+                    <div class="flex items-center text-sm text-gray-600 mb-4">
+                        <i class="fas fa-calendar-day mr-2"></i> June 15, 2023
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600 mb-4">
+                        <i class="fas fa-clock mr-2"></i> 2:00 PM - 4:00 PM (GMT)
+                    </div>
+                    <button class="w-full px-4 py-2 bg-teal-600 text-white text-sm font-medium rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                        <i class="fas fa-user-plus mr-2"></i>Join Workshop
+                    </button>
+                </div>
+
+                <!-- Workshop Card 2 -->
+                <div class="feedback-card bg-gradient-to-br from-teal-50 to-purple-50 border border-gray-200 rounded-lg p-5 shadow-sm">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-medium text-gray-800">NGO Leaders Roundtable</h3>
+                        <span class="px-2 py-1 bg-teal-100 text-teal-800 text-xs rounded-full">By Invitation</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Strategic discussion about implementing IncludAI findings in your programs and advocacy work.</p>
+                    <div class="flex items-center text-sm text-gray-600 mb-4">
+                        <i class="fas fa-calendar-day mr-2"></i> June 22, 2023
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600 mb-4">
+                        <i class="fas fa-clock mr-2"></i> 10:00 AM - 12:00 PM (GMT)
+                    </div>
+                    <button class="w-full px-4 py-2 bg-gray-200 text-gray-700 text-sm font-medium rounded-md cursor-not-allowed" disabled>
+                        Request Invitation
+                    </button>
+                </div>
+
+                <!-- Workshop Card 3 -->
+                <div class="feedback-card bg-gradient-to-br from-teal-50 to-purple-50 border border-gray-200 rounded-lg p-5 shadow-sm">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-medium text-gray-800">Survey Design Best Practices</h3>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Open to All</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">Learn how to create disability-inclusive surveys that yield high-quality data.</p>
+                    <div class="flex items-center text-sm text-gray-600 mb-4">
+                        <i class="fas fa-calendar-day mr-2"></i> July 5, 2023
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600 mb-4">
+                        <i class="fas fa-clock mr-2"></i> 3:00 PM - 5:00 PM (GMT)
+                    </div>
+                    <button class="w-full px-4 py-2 bg-teal-600 text-white text-sm font-medium rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
+                        <i class="fas fa-user-plus mr-2"></i>Join Workshop
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <a href="#" class="text-sm text-teal-600 hover:text-teal-700 font-medium">
+                    View Full Calendar <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-gray-600">© 2023 IncludAI DataHub. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Accessibility</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('[role="tab"]');
+            const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Hide all tab panels
+                    tabPanels.forEach(panel => {
+                        panel.classList.add('hidden');
+                    });
+                    
+                    // Deactivate all tabs
+                    tabs.forEach(t => {
+                        t.setAttribute('aria-selected', 'false');
+                        t.classList.remove('text-teal-600', 'border-teal-600');
+                        t.classList.add('text-gray-500', 'hover:text-gray-700');
+                    });
+                    
+                    // Activate the clicked tab
+                    this.setAttribute('aria-selected', 'true');
+                    this.classList.remove('text-gray-500', 'hover:text-gray-700');
+                    this.classList.add('text-teal-600', 'border-teal-600');
+                    
+                    // Show the associated tab panel
+                    const panelId = this.getAttribute('aria-controls');
+                    document.getElementById(panelId).classList.remove('hidden');
+                });
+            });
+            
+            // Initialize the first tab as active
+            tabs[0].click();
+        });
+    </script>
+</body>
+</html>

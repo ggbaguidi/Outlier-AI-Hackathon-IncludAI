@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partnerships & Resources Hub | IncludAI DataHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Alegreya:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAIAAAAnuUURAAAGSklEQVR4nOyZfUwTZxzHn2uvtkBpealQBeLGQDtBx3yXFzNf/8B3RaeOGbNkL4kz6oyaZcn0D/1j2eaybGqmOI2yacw2h26Is1NwvgAWxei0bmLFUmih0hautKV37dpee73rXXu9UpOZ8E3T3D2/e+75PL9+73nueQq73W7wvxcMXgQNU8ZPw5Tx0zBl/BQHSlPfgOqu5r5a19VpMnSau3VmHurOzkwdnZmSNSpt7PjRRdNyxdIEMARBMY/qPWakuq7piuofjaabjwI+FvzA1FNPNH/cqMml+QvWTk0ZKQbcFQtltwU59Pu108oWp80JY4CHAtjl+/YB+Y9dvmNqNAGG56+ZWv5usTSDGys3SoMFOXjh2slLKtSGBjOHBRADmcMRmaNeVsGcdZPLN5WJ0xKjbJcHotYghu2rbai62Ohwot6eQf5yTzchCBB99R4HTqBANHCpt2TQ7lRWNZ797DI2iIHoFG0ue622t787eetfLWO2WH3JmOn8STnvn1iblMb+YEWVSyfmWnf4ZPNjrffEHciWL0N4tgCRS1+2iExDxPVElFRXc1NbVXkKc7pYAaKi3HGmtlmj9f9uviYhP4sfyO0GwaibEsWPKVEQjGqanp7ZXssKwE55pFH1/fWWEG+RcxkhWwyZhkCIp28ca7lRpQJDoTT0IzvPXgCkB4I9W4CSrQiZBoG6v338R78eATFT7lHWO1CUW7ai9iVRd9DmbPjyWoyUml7TUdVtVm9BbL50h2SaydPNR1T9XUgslHsuN2AuF9mFADB7i9N4yXg3pw29tKc+HEmkt40mbQcg9RgAfsGcNT+uyssIuW7QeO6L0xeLVnxeLhcy3AY16cw9nUZjW8etn++1tljcNF/izE8a2sORhB3V1UbjxK/30+diviB9+ZuV35Sk4AQ3f6jeebbd4vBGEyVZK7ZWbp4q8oWQ6weUzXaZokA+bkL2y6PxQmBpvHp8W/3dpxjDnVGw5e5GmUJGhwmbyxq1mtlbdkRrsRN56usxP/NMJPjUZzL3WtFAyG64p1aqHPXe5vk5i5Z9srdwJADSGaUfHIIPVCrVeozu2gc16jJFKR0mrC8bfT83COMtQvSnGFCjPhdiupq6qlNGvFBQMGXxajk+LYZ42tBqAEwKS6lHkGC7tPESBJlDRwCySE+x9VHto05/MZy7pFAu8V0OUbrdr+8HnCnDj3kgyBw6XpJFruvUdXT2BAKvyLMz+PS6iMEKOFEaEGuEuZgQ3VtkkaPOfsTYFwiIROkSmD4zIV0ccymE+US79BGOgkL1FlkUTzvsTgcRgWFh8G7BuiG3ZqWUi8UBqki+BDRvUTpAvl4IC4jh1I6iDoa64swkwJkyrr4EQlGQ0oHo+1B6XbE8mREGjkQZfi4mRPcWoEaJbAmSxTKJv9zZ9qSjm2G8FMs55rJILifaHfJ46SnmSxV5Y/yUqPbCI73vSQrx9KgiOeBEufRVRbDdoY+Xydnz1ivwWRW03aurMeJzVIgvFUsVTCzhf3GFTDZ2pKxNb4zelyNSU9KSiBuKMgvzZiShPAyI0rJLK2ZMU3hDA/dbj2+ra9VhfJqnZWPTGSdxACKuIbfV1h34q4m0SuRPLK44uiwvJ5HSN4dJf+7gL1fCvhPhQq06fcsx5U/V7VYbdc0ZWGHO/qhkwd55nCmfmMxF+/ZjDpRHXtpSdy8oJbRtAuKth7VuggDe+XBLUgbHp8ejl1JTPiyZzuhLKMw7IsCdSjqOsm7xxunhEAHrumf7G2VSkeh5r3uEycLZO8oiYLBQSkXCr5aXR7l2AYB53cO6Zqr4drFQIoyd0qPVr0/YPLvk+a3H524tfW1lQWSGqPY2di2cOzN3jP8kruvx8fPzyj+dwwoQFSUPgo69syorVYq3HC9fpmZJ1x+ugHhQfCg9komTmnZvWj9rCojTerzkrUm7mzYlRLQjIc57wScaVLuqz4NBV8zjJeyGNuxdVLp2UvSNxrJj/Vj/rOr89ZqGOy4Hxmn/cgTEn7Vk4sL3SuS56ZxajH33X9/bd7jm6q9/3kYHUNZ99USBYMHKyQs3zEyTSwB3QUP/5/nOww7l1b8fqHVWi23AYvd8PFiSBJHU8xEnFE7IKZ47Pr8wCwxB0PD/43HTMGX8NEwZP70YlP8BAAD//5avnHMAAAAGSURBVAMAG5cFcZNToGoAAAAASUVORK5CYII=" type="image/png">
+    <style>
+        body {
+            font-family: 'Alegreya', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .resource-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tab-active {
+            border-bottom: 3px solid #6b46c1;
+            color: #6b46c1;
+            font-weight: 600;
+        }
+        .carousel-item {
+            min-width: 300px;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-teal-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl mr-2">ID</div>
+                    <span class="text-xl font-bold text-gray-800">IncludAI DataHub</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100" aria-label="Notifications">
+                        <i class="fas fa-bell text-gray-600"></i>
+                    </button>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mr-2">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span class="text-sm font-medium">Admin</span>
+                    </div>
+                </div>
+                <button class="md:hidden p-2 rounded-full hover:bg-gray-100" aria-label="Mobile Menu">
+                    <i class="fas fa-bars text-gray-600 text-2xl"></i>
+                </button>
+            </div>
+
+             <!-- Navigation -->
+             <nav class="hidden md:flex mt-4 flex space-x-6 border-b">
+                <a href="/home/dashboard.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Dashboard</a>
+                <a href="/home/data-collection.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Data Collection</a>
+                <a href="/home/analytics.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Analytics</a>
+                <a href="/home/co-design.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Co-Design & Feedback Portal</a>
+                <a href="/home/reporting.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Reporting & DaaS</a>
+                <a href="#" class="pb-3 px-1 text-teal-600 border-b-2 border-teal-600 font-medium">Resources</a>
+                <a href="/home/user-managements.html" class="pb-3 px-1 text-gray-500 hover:text-gray-700 font-medium">Settings</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Breadcrumbs and Quick Actions -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div class="flex items-center text-sm text-gray-600 mb-4 md:mb-0">
+                <a href="/home/dashboard.html" class="hover:text-teal-600">Dashboard</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <span class="font-medium text-teal-600">Partnerships & Resources Hub</span>
+            </div>
+            <div class="flex space-x-3">
+                <button class="flex items-center px-4 py-2 bg-teal-50 text-teal-600 rounded-lg hover:bg-teal-100 transition">
+                    <i class="fas fa-handshake mr-2"></i> Suggest a Partner
+                </button>
+                <button class="flex items-center px-4 py-2 bg-purple-50 text-purple-600 rounded-lg hover:bg-purple-100 transition">
+                    <i class="fas fa-upload mr-2"></i> Upload Resource
+                </button>
+            </div>
+        </div>
+
+        <!-- Page Header -->
+        <div class="mb-10">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Partnerships & Resources Hub</h1>
+            <p class="text-gray-600 max-w-3xl">Explore our collaborative ecosystem of partner organizations, advisory experts, and authoritative data sources. Access our curated library of best-practice guides, policy briefs, and SDG-alignment materials.</p>
+        </div>
+
+        <!-- Partner Directory Section -->
+        <section class="mb-16" aria-labelledby="partner-directory">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="partner-directory" class="text-2xl font-bold text-gray-800">Partner Directory</h2>
+                <div class="relative w-64">
+                    <input type="text" placeholder="Search partners..." class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex flex-wrap gap-3 mb-6">
+                <div class="flex items-center">
+                    <label for="partner-type" class="mr-2 text-sm text-gray-600">Filter by:</label>
+                    <select id="partner-type" class="text-sm border rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-teal-500">
+                        <option>All Types</option>
+                        <option>NGO</option>
+                        <option>Government</option>
+                        <option>Research</option>
+                        <option>Corporate</option>
+                    </select>
+                </div>
+                <div class="flex items-center">
+                    <select id="partner-region" class="text-sm border rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-teal-500">
+                        <option>All Regions</option>
+                        <option>Africa</option>
+                        <option>Asia</option>
+                        <option>Europe</option>
+                        <option>Americas</option>
+                    </select>
+                </div>
+                <button class="ml-auto text-sm text-teal-600 hover:text-teal-700 flex items-center">
+                    <i class="fas fa-sliders-h mr-1"></i> Advanced Filters
+                </button>
+            </div>
+
+            <!-- Partner Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Partner Card 1 -->
+                <div class="partner-card bg-white rounded-lg shadow-md p-6 transition duration-300 hover:border-teal-200 border border-transparent">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 mr-4">
+                            <i class="fas fa-hands-helping text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Global Disability Rights</h3>
+                            <p class="text-sm text-gray-500">NGO • Global</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">Advancing disability inclusion through policy advocacy and capacity building in 40+ countries.</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-2">
+                            <span class="px-2 py-1 bg-teal-50 text-teal-600 text-xs rounded-full">SDG 10</span>
+                            <span class="px-2 py-1 bg-teal-50 text-teal-600 text-xs rounded-full">Policy</span>
+                        </div>
+                        <a href="#" class="text-teal-600 text-sm font-medium hover:text-teal-700">View Profile <i class="fas fa-chevron-right ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Partner Card 2 -->
+                <div class="partner-card bg-white rounded-lg shadow-md p-6 transition duration-300 hover:border-teal-200 border border-transparent">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 mr-4">
+                            <i class="fas fa-university text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Ministry of Health Kenya</h3>
+                            <p class="text-sm text-gray-500">Government • Africa</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">National health authority implementing inclusive health data collection systems.</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-2">
+                            <span class="px-2 py-1 bg-teal-50 text-teal-600 text-xs rounded-full">SDG 3</span>
+                            <span class="px-2 py-1 bg-teal-50 text-teal-600 text-xs rounded-full">Health</span>
+                        </div>
+                        <a href="#" class="text-teal-600 text-sm font-medium hover:text-teal-700">View Profile <i class="fas fa-chevron-right ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Partner Card 3 -->
+                <div class="partner-card bg-white rounded-lg shadow-md p-6 transition duration-300 hover:border-teal-200 border border-transparent">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 mr-4">
+                            <i class="fas fa-flask text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Inclusive Data Institute</h3>
+                            <p class="text-sm text-gray-500">Research • Global</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm">Pioneering research on ethical AI for disability inclusion and accessible data visualization.</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-2">
+                            <span class="px-2 py-1 bg-teal-50 text-teal-600 text-xs rounded-full">SDG 4</span>
+                            <span class="px-2 py-1 bg-teal-50 text-teal-600 text-xs rounded-full">Research</span>
+                        </div>
+                        <a href="#" class="text-teal-600 text-sm font-medium hover:text-teal-700">View Profile <i class="fas fa-chevron-right ml-1 text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <button class="px-6 py-2 border border-teal-600 text-teal-600 rounded-lg hover:bg-teal-50 transition">
+                    View All Partners (42)
+                </button>
+            </div>
+        </section>
+
+        <!-- Advisory Board Showcase -->
+        <section class="mb-16" aria-labelledby="advisory-board">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="advisory-board" class="text-2xl font-bold text-gray-800">Advisory Board</h2>
+                <a href="#" class="text-teal-600 hover:text-teal-700 text-sm font-medium">Meet the Full Board <i class="fas fa-chevron-right ml-1 text-xs"></i></a>
+            </div>
+
+            <div class="relative">
+                <div class="flex overflow-x-auto pb-4 scrollbar-hide space-x-4">
+                    <!-- Advisory Member 1 -->
+                    <div class="carousel-item flex-shrink-0 bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-4 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. Amina Diallo" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Dr. Amina Diallo</h3>
+                                <p class="text-sm text-gray-500">Disability Data Specialist</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4 text-sm">Former WHO technical officer with 15+ years experience in disability measurement frameworks.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-purple-600 hover:text-purple-700" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-purple-600 hover:text-purple-700" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-purple-600 hover:text-purple-700" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Advisory Member 2 -->
+                    <div class="carousel-item flex-shrink-0 bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-4 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Prof. Carlos Mendez" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Prof. Carlos Mendez</h3>
+                                <p class="text-sm text-gray-500">AI Ethics Researcher</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4 text-sm">Director of Ethical AI Lab at Stanford, focusing on inclusive machine learning models.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-purple-600 hover:text-purple-700" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-purple-600 hover:text-purple-700" aria-label="Website"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Advisory Member 3 -->
+                    <div class="carousel-item flex-shrink-0 bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-4 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Nadia Johnson" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Nadia Johnson</h3>
+                                <p class="text-sm text-gray-500">Accessibility Advocate</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4 text-sm">Founder of AccessForAll, leading voice in digital accessibility standards and policy.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-purple-600 hover:text-purple-700" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-purple-600 hover:text-purple-700" aria-label="Blog"><i class="fas fa-blog"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Advisory Member 4 -->
+                    <div class="carousel-item flex-shrink-0 bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-4 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Dr. Raj Patel" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Dr. Raj Patel</h3>
+                                <p class="text-sm text-gray-500">Global Health Data</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4 text-sm">Technical lead for health data systems at UNDP, specializing in LMIC implementations.</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-purple-600 hover:text-purple-700" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-purple-600 hover:text-purple-700" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Sources Panel -->
+        <section class="mb-16" aria-labelledby="data-sources">
+            <h2 id="data-sources" class="text-2xl font-bold text-gray-800 mb-6">Trusted Data Sources</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- Data Source 1 -->
+                <a href="#" class="data-source bg-white rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-3">
+                        <i class="fas fa-globe-americas text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800 mb-1">WHO</h3>
+                    <p class="text-xs text-gray-500">Global disability prevalence estimates</p>
+                </a>
+                
+                <!-- Data Source 2 -->
+                <a href="#" class="data-source bg-white rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 rounded-full bg-green-50 flex items-center justify-center text-green-600 mb-3">
+                        <i class="fas fa-eye text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800 mb-1">Sightsavers</h3>
+                    <p class="text-xs text-gray-500">Eye health and disability data</p>
+                </a>
+                
+                <!-- Data Source 3 -->
+                <a href="#" class="data-source bg-white rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-600 mb-3">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800 mb-1">UNDP</h3>
+                    <p class="text-xs text-gray-500">SDG indicators and progress</p>
+                </a>
+                
+                <!-- Data Source 4 -->
+                <a href="#" class="data-source bg-white rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center text-red-600 mb-3">
+                        <i class="fas fa-database text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800 mb-1">Inclusive Data Charter</h3>
+                    <p class="text-xs text-gray-500">Disaggregation methodologies</p>
+                </a>
+                
+                <!-- Data Source 5 -->
+                <a href="#" class="data-source bg-white rounded-lg p-4 flex flex-col items-center text-center hover:shadow-md transition">
+                    <div class="w-16 h-16 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 mb-3">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800 mb-1">Washington Group</h3>
+                    <p class="text-xs text-gray-500">Disability measurement tools</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Resource Library -->
+        <section aria-labelledby="resource-library">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="resource-library" class="text-2xl font-bold text-gray-800">Resource Library</h2>
+                <div class="relative w-64">
+                    <input type="text" placeholder="Search resources..." class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- Resource Tabs -->
+            <div class="flex border-b mb-6">
+                <button class="tab-active px-4 py-2 text-sm font-medium">All Resources</button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-purple-600">Best Practices</button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-purple-600">Policy Briefs</button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-purple-600">SDG Maps</button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-purple-600">Templates</button>
+            </div>
+
+            <!-- Resource Filters -->
+            <div class="flex flex-wrap gap-3 mb-6">
+                <div class="flex items-center">
+                    <label for="resource-type" class="mr-2 text-sm text-gray-600">Sort by:</label>
+                    <select id="resource-type" class="text-sm border rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-purple-500">
+                        <option>Newest First</option>
+                        <option>Most Downloaded</option>
+                        <option>Alphabetical</option>
+                    </select>
+                </div>
+                <div class="flex items-center">
+                    <select id="resource-tag" class="text-sm border rounded px-3 py-1 focus:outline-none focus:ring-1 focus:ring-purple-500">
+                        <option>All Tags</option>
+                        <option>Data Collection</option>
+                        <option>AI Ethics</option>
+                        <option>Accessibility</option>
+                        <option>SDG 10</option>
+                    </select>
+                </div>
+                <button class="ml-auto text-sm text-purple-600 hover:text-purple-700 flex items-center">
+                    <i class="fas fa-filter mr-1"></i> More Filters
+                </button>
+            </div>
+
+            <!-- Resource List -->
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <!-- Resource Item 1 -->
+                <div class="resource-card border-b last:border-b-0 hover:bg-gray-50 transition">
+                    <div class="flex flex-col md:flex-row md:items-center p-4">
+                        <div class="flex-1 mb-3 md:mb-0">
+                            <h3 class="font-medium text-gray-800 mb-1">Inclusive Data Collection Guide</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-purple-50 text-purple-600 text-xs rounded-full">Best Practice</span>
+                                <span class="px-2 py-1 bg-purple-50 text-purple-600 text-xs rounded-full">Data Collection</span>
+                                <span class="text-xs text-gray-500">Published: 15 Jun 2023</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 border border-purple-600 text-purple-600 rounded text-sm hover:bg-purple-50 transition">
+                                <i class="fas fa-eye mr-1"></i> Preview
+                            </button>
+                            <button class="px-3 py-1 bg-purple-600 text-white rounded text-sm hover:bg-purple-700 transition">
+                                <i class="fas fa-download mr-1"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Item 2 -->
+                <div class="resource-card border-b last:border-b-0 hover:bg-gray-50 transition">
+                    <div class="flex flex-col md:flex-row md:items-center p-4">
+                        <div class="flex-1 mb-3 md:mb-0">
+                            <h3 class="font-medium text-gray-800 mb-1">AI Ethics Framework for Disability Inclusion</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-purple-50 text-purple-600 text-xs rounded-full">Policy Brief</span>
+                                <span class="px-2 py-1 bg-purple-50 text-purple-600 text-xs rounded-full">AI Ethics</span>
+                                <span class="text-xs text-gray-500">Published: 2 May 2023</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 border border-purple-600 text-purple-600 rounded text-sm hover:bg-purple-50 transition">
+                                <i class="fas fa-eye mr-1"></i> Preview
+                            </button>
+                            <button class="px-3 py-1 bg-purple-600 text-white rounded text-sm hover:bg-purple-700 transition">
+                                <i class="fas fa-download mr-1"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Item 3 -->
+                <div class="resource-card border-b last:border-b-0 hover:bg-gray-50 transition">
+                    <div class="flex flex-col md:flex-row md:items-center p-4">
+                        <div class="flex-1 mb-3 md:mb-0">
+                            <h3 class="font-medium text-gray-800 mb-1">SDG 10 Disability Indicators Mapping</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-purple-50 text-purple-600 text-xs rounded-full">SDG Map</span>
+                                <span class="px-2 py-1 bg-purple-50 text-purple-600 text-xs rounded-full">SDG 10</span>
+                                <span class="text-xs text-gray-500">Published: 22 Apr 2023</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 border border-purple-600 text-purple-600 rounded text-sm hover:bg-purple-50 transition">
+                                <i class="fas fa-eye mr-1"></i> Preview
+                            </button>
+                            <button class="px-3 py-1 bg-purple-600 text-white rounded text-sm hover:bg-purple-700 transition">
+                                <i class="fas fa-download mr-1"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Item 4 -->
+                <div class="resource-card border-b last:border-b-0 hover:bg-gray-50 transition">
+                    <div class="flex flex-col md:flex-row md:items-center p-4">
+                        <div class="flex-1 mb-3 md:mb-0">
+                            <h3 class="font-medium text-gray-800 mb-1">Accessible Survey Template</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-purple-50 text-purple-600 text-xs rounded-full">Template</span>
+                                <span class="px-2 py-1 bg-purple-50 text-purple-600 text-xs rounded-full">Accessibility</span>
+                                <span class="text-xs text-gray-500">Published: 10 Mar 2023</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 border border-purple-600 text-purple-600 rounded text-sm hover:bg-purple-50 transition">
+                                <i class="fas fa-eye mr-1"></i> Preview
+                            </button>
+                            <button class="px-3 py-1 bg-purple-600 text-white rounded text-sm hover:bg-purple-700 transition">
+                                <i class="fas fa-download mr-1"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <button class="px-6 py-2 border border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 transition">
+                    Load More Resources
+                </button>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="mt-16 bg-gradient-to-r from-teal-500 to-purple-600 rounded-xl p-8 text-white">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl font-bold mb-4">Join Our Growing Network</h2>
+                <p class="mb-6">Become part of our collaborative ecosystem working towards inclusive data practices and disability inclusion worldwide.</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+                    <button class="px-6 py-3 bg-white text-teal-600 rounded-lg font-medium hover:bg-gray-100 transition">
+                        Become a Partner
+                    </button>
+                    <button class="px-6 py-3 border border-white text-white rounded-lg font-medium hover:bg-white hover:bg-opacity-10 transition">
+                        Request a Resource
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 border-t border-gray-200 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-gray-600">© 2023 IncludAI DataHub. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Accessibility</a>
+                    <a href="#" class="text-sm text-gray-600 hover:text-teal-600">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple tab functionality
+        document.querySelectorAll('[role="tab"]').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('[role="tab"]').forEach(t => {
+                    t.classList.remove('tab-active');
+                    t.classList.add('text-gray-600');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('tab-active');
+                this.classList.remove('text-gray-600');
+            });
+        });
+
+        // Carousel navigation (simplified for this example)
+        let carouselPosition = 0;
+        const carousel = document.querySelector('.carousel');
+        
+        function moveCarousel(direction) {
+            const itemWidth = document.querySelector('.carousel-item').offsetWidth;
+            carouselPosition += direction * itemWidth;
+            carousel.style.transform = `translateX(-${carouselPosition}px)`;
+        }
+    </script>
+</body>
+</html>
